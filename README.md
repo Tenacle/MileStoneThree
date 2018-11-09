@@ -1,37 +1,60 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+<header> Bill Splitter </header>
 
-You can use the [editor on GitHub](https://github.com/Jonathan204/MileStoneThree/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+<p class = "billspositioning">
+Bills 
+</p>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+<div class ="leftcolumn">
+  <button id = "billsbtn" class = "sidebtns">
+  
+  </button>
+</div>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+<!-- Create bill drop down stuff ------------------------------------------>
+<div class="CreateBill">
+  <button class="createbillbtn">Create Bill +</button>
+  <div class="CreateBill-content">
+    <button id="quickID" class ="splitbtns">QuickBill</button>
+    <button id="codeID" class ="splitbtns">Code Bill</button>
+  </div>
+</div>
 
-# Header 1
-## Header 2
-### Header 3
+<!-- Quick split Modal -->
+<div id="qmodalID" class="modal">
+	<!-- Modal content -->	
+  <div class="modal-content">
+    <span class="qclose">&times;</span>
+	<h3 class = "billtitles"> Quick Split </h3>
+    <p>This will become a quick split..</p>
+  </div>
 
-- Bulleted
-- List
+</div>
+<!-- Code Split Modal -->
+<div id="cmodalID" class="modal">
 
-1. Numbered
-2. List
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="cclose">&times;</span>
+	<h3 class = "billtitles"> Code Split </h3>
+    <p>This will become a code split..</p>
+  </div>
 
-**Bold** and _Italic_ and `Code` text
+</div>
 
-[Link](url) and ![Image](src)
-```
+<script src = "codesplit.js"></script>
+<script src = "quicksplit.js"></script>
+<!-- Create bill drop down stuff ends ------------------------------------>
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Jonathan204/MileStoneThree/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+<div class = "footer">
+</div>
+</body>
+</html>
