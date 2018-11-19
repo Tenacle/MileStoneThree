@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="Styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<header> Bill Splitter </header>
+
+<p class = "billspositioning">
+Bills 
+</p>
+
+
+<div class ="leftcolumn">
+  <button id = "billsbtn" class = "sidebtns">
+  
+  </button>
+</div>
+
+
+<!-- Create bill drop down stuff ------------------------------------------>
+<div class="CreateBill">
+  <button class="createbillbtn">Create Bill +</button>
+  <div class="CreateBill-content">
+    <button id="quickID" class ="splitbtns">QuickBill</button>
+    <button id="codeID" class ="splitbtns">Code Bill</button>
+  </div>
+</div>
+
+<!-- Quick split Modal -->
+<div id="qmodalID" class="modal">
+	<!-- Modal content -->	
+  
+  <div id = "quicksplit-content">
+    <div id = "quicksplit-header">
+      <div id = "quicksplit-title">
+        <h1>Quick Split</h1>
+      </div>
+    </div>
+    
+    <div id ="quicksplit-curtain">
+      <div id = "quicksplit-total-message"></div>
+      
+      <button id = "quicksplit-back-button" type = "button">Go back</button>
+    </div>
+    
+    <div id = "quicksplit-background">
+    
+    <div id = "quicksplit-inputs-container">
+      <div class="quicksplit-input-container">
+        <div class = "quicksplit-input-name">Number of People </div>
+          <input id ="quicksplit-input-numberpeople" 
+              type = "number" name = "numberPeople" min = "1" required>
+      </div>
+
+      <div class="quicksplit-input-container">
+        <div class = "quicksplit-input-name">Bill Total ($): </div>
+        <input id = "quicksplit-input-billtotal"
+              type = "number"  min = "0" required>
+      </div>
+
+      <div class="quicksplit-input-container">
+        <div class = "quicksplit-input-name">Tip (%): </div>
+        <input id = "quicksplit-input-tip"
+              type = "number" value = "0" min = "0" required>
+      </div>
+
+      <div class="quicksplit-input-container">
+        <div class = "quicksplit-input-name">Tax (%): </div>
+        <input id = "quicksplit-input-tax"
+              type = "number" value = "0" min = "0" required>
+      </div>  
+
+      </div>
+
+    <button type="button" id ="quicksplit-calculate-button">Calculate</button> 
+  </div>
+</div>
+  
+</div>
+<!-- Code Split Modal -->
+<div id="cmodalID" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="cclose">&times;</span>
+	<h3 class = "billtitles"> Code Split </h3>
+    <p>This will become a code split..</p>
+  </div>
+
+</div>
+
+
+
+<script src = "codesplit.js"></script>
+<script src = "quicksplit.js"></script>
+<!-- Create bill drop down stuff ends ------------------------------------>
+
+
+<div class = "footer">
+</div>
+</body>
+</html>
