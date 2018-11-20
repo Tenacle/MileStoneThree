@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="Styles.css">
+  <link rel="stylesheet" href="./css/Styles.css">
 </head>
 <body>
 
@@ -24,6 +24,7 @@
   <button class="createbillbtn">Create Bill +</button>
   <div class="CreateBill-content">
     <button id="quickID" class ="splitbtns">QuickBill</button>
+    <button id="advancedID" class ="splitbtns">Advanced Bill</button>
     <button id="codeID" class ="splitbtns">Code Bill</button>
   </div>
 </div>
@@ -87,7 +88,7 @@
 <div id="abtmodalID" class="modal">
 	<!-- popup content -->	
   <div class="modal-content">
-    <span class="aclose">&times;</span>
+    <span class="close">&times;</span>
 	<h3 class = "billtitles"> About Us! </h3>
     <p>Created By, Jai, Earl, Tristan, Jon</p>
   </div>
@@ -95,21 +96,55 @@
 
 <!-- Quick split Popup -->
 <div id="qmodalID" class="modal">
+
+  <!-- Modal content -->  
 	<!-- popup content -->	
   <div class="modal-content">
-    <span class="qclose">&times;</span>
-	<h3 class = "billtitles"> Quick Split </h3>
+    <span class="close">&times;</span>
+  <h3 class = "billtitles"> Quick Split </h3>
     <p>This will become a quick split..</p>
   </div>
 
+</div>
+
+<!-- Advanced split Modal -->
+<div id="amodalID" class="modal">
+
+  <!-- Modal content -->  
+  <div class="modal-content">
+
+  <span class="close">&times;</span>
+  <h3 class = "billtitles"> Advanced Split </h3>
+  <form id="hey" action="something.js">
+    <input id="title" type="text" name="billname" placeholder="Bill Name">
+    <input type="date" name="billdate">
+    <select name="repeating">
+      <option value="no">Does Not Repeat</option>
+      <option value="daily">Daily</option>
+      <option value="weekly">Weekly</option>
+      <option value="monthly">Monthly</option>
+      <option value="annually">Annually</option>
+      <option value="custom">Custom...</option>
+    </select>
+    </br>
+    Bill Items:
+    </br>
+    <button type="button" name="additem" onclick="newinput()"> + </button>
+    <div id="itemlistid" class="itemlist">
+
+    </div>
+  </form>
+
+  </div>
+  
 </div>
 
 <!-- Code Split popup -->
 <div id="cmodalID" class="modal">
   <!-- popup content -->
   <div class="modal-content">
-    <span class="cclose">&times;</span>
-	<h3 class = "billtitles"> Code Split </h3>
+    <span class="close">&times;</span>
+  <h3 class = "billtitles"> Code Split </h3>
     <p>This will become a code split..</p>
   </div>
 
@@ -180,6 +215,7 @@
 </div>
 <!-- End of bill data -->
 
+<!-- Create bill drop down stuff ends ----------------------------------->
 <!-- user Data -->
 <div id = "usersID" class = "mainStyle">
 <ul><h1>Users</h1>
@@ -207,13 +243,13 @@
 
 
 <!-- ============================================ Scripts ================================================== -->
-<script src = "abtus.js"></script>
-<script src = "codesplit.js"></script>
-<script src = "quicksplit.js"></script>
-<script src = "sidechange.js"></script>
+<script src="./javascript/abtus.js"></script>
+<script src="./javascript/codesplit.js"></script>
+<script src="./javascript/quicksplit.js"></script>
+<script src="./javascript/sidechange.js"></script>
+<script src="./javascript/itemlist_adder.js"></script>
+<script src="./javascript/modal_handler.js"></script>
 <!-- ============================================ end of scripts ================================================== -->
-
-
 
 </body>
 </html>
