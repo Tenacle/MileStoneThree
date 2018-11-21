@@ -219,6 +219,7 @@ display: none;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    width: 97%;
 	
 }
 .splitbtns:hover {background-color: Gainsboro}
