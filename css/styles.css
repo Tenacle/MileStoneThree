@@ -108,6 +108,12 @@ display: none;
 }
 .abtusbtn:hover {background-color: Gainsboro;}
 
+/*Little X in the top right of the about us popup*/
+.aclose {color: #aaa; float: right; font-size: 28px; font-weight: bold;}
+
+/* Hovering or focusing on the little x*/
+.aclose:hover,.aclose:focus {color: black; text-decoration: none; cursor: pointer;}
+
 /* THe three vertical dot hover menu*/
 .threedotmenu{position: absolute; top: 10px;left: 20px; border: none;}
 .threedotmenu:hover .dotmenu-content{display: block;}
@@ -221,11 +227,8 @@ display: none;
 
 /*-------------------------------------- bill split pop up styles ----------------------------*/
 /* the popups size and location on the screen*/
-.hidden {
-    display: none; /* Hidden by default */
-}
 .modal {
-    display: block;
+    display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
