@@ -15,35 +15,35 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
 abtn.onclick = function() {
-  amodal.style.display = "block";
+  amodal.style.className = "modal";
 }
 qbtn.onclick = function() {
-  qmodal.style.display = "block";
+  qmodal.style.className = "modal";
 }
 cbtn.onclick = function() {
-  cmodal.style.display = "block";
+  cmodal.style.className = "modal";
 }
 abtbtn.onclick = function() {
-  abtmodal.style.display = "block";
+  abtmodal.style.className = "modal";
 }
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-  amodal.style.display = "none";
-  qmodal.style.display = "none";
-  cmodal.style.display = "none";
-  abtmodal.style.display = "none";
+  amodal.style.className = "hidden";
+  qmodal.style.className = "hidden";
+  cmodal.style.className = "hidden";
+  abtmodal.style.className = "hidden";
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == amodal) {
-      amodal.style.display = "none";
+      amodal.style.className = "hidden";
   }else if (event.target == qmodal) {
-      qmodal.style.display = "none";
+      qmodal.style.className = "hidden";
   }else if (event.target == cmodal) {
-      cmodal.style.display = "none";
+      cmodal.style.className = "hidden";
   }else if (event.target == abtmodal) {
-  abtmodal.style.display = "none";
+  abtmodal.style.className = "hidden";
   }
 }
