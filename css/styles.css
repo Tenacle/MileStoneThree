@@ -154,7 +154,10 @@ display: none;
 }
 
 .sidebtns:focus{background: #4478C3;}
-.sidebtns:hover{cursor: pointer;}
+.sidebtns:hover{
+    cursor: pointer;
+    background:  #4478C3;}
+}
 /* -------------------------- Three side buttons end --------------------------*/
 .billtitles{text-align: center; font-family: "Arial black";}
 
