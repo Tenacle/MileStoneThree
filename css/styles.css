@@ -18,7 +18,7 @@ left: 325px;
 height:700px;
 width:75%;
 border:none;
-font:16px/26px Georgia, Garamond, Serif;
+font:16px/26px;
 overflow:auto;	
 position: absolute;
 display: none;

@@ -1,3 +1,19 @@
+
+//automatically selects bills at startup
+$(document).ready(function(){
+	toptext.innerHTML = "Bills";
+	bsidebtn.style.color = "white";
+	gsidebtn.style.color = "black";
+	usidebtn.style.color = "black";
+	bsidebtn.style.background = "#4478C3";
+	gsidebtn.style.background = "white";
+	usidebtn.style.background = "white";
+	billsDisplay.style.display = "block";
+	groupsDisplay.style.display = "none";
+	usersDisplay.style.display = "none";
+});
+
+
 //get the button
 var bsidebtn = document.getElementById("bsidebtn");
 var gsidebtn = document.getElementById("gsidebtn");
