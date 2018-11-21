@@ -42,7 +42,7 @@
 </div>
 
 <!-- Search Bar -->
-<input type="text" name = "search" placeholder="Search..">
+<input id"searchBox" type="text" name="search" placeholder="Search..">
 
 <!-- Three side buttons -->
 <div class ="leftcolumn">
@@ -112,27 +112,41 @@
 
   <!-- Modal content -->  
   <div class="modal-content">
-
   <span class="close">&times;</span>
   <h3 class = "billtitles"> Advanced Split </h3>
-  <form id="hey" action="something.js">
-    <input id="title" type="text" name="billname" placeholder="Bill Name">
-    <input type="date" name="billdate">
-    <select name="repeating">
-      <option value="no">Does Not Repeat</option>
-      <option value="daily">Daily</option>
-      <option value="weekly">Weekly</option>
-      <option value="monthly">Monthly</option>
-      <option value="annually">Annually</option>
-      <option value="custom">Custom...</option>
-    </select>
-    </br>
-    Bill Items:
-    </br>
-    <button type="button" name="additem" onclick="newinput()"> + </button>
-    <div id="itemlistid" class="itemlist">
 
+  <!-- Bill form -->
+  <form id="advSplit_Form" action="something.js">
+
+    <div id="advSplit_BillInfo">
+      <input type="text" name="billName" placeholder="Enter Bill Name">
+      <input type="date" name="billDate">
+      <select name="billRepeat">
+        <option value="no">Does Not Repeat</option>
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+        <option value="monthly">Monthly</option>
+        <option value="annually">Annually</option>
+        <option value="custom">Custom...</option>
+      </select>
     </div>
+
+    <div id="advSplit_BillTotal">
+      Total: $ <input type="number" name="billTotal" placeholder="00.00">
+      TAX(<button class="smallButton" type="button" name="taxType"> % </button>): <input type="number" name="billTax" placeholder="13">
+      TIP(<button class="smallButton" type="button" name="tipType"> % </button>): <input type="number" name="billTip" placeholder="0">
+    </div>
+
+    <div id="advSplit_BillItems">
+      <button type="button" name="additem" onclick="newinput()"> + add item</button>
+    </div>
+
+    <div id="advSplit_Groups">
+      <select name="billGroups" id="advSplit_BillGroups" onchange="processGroupReq(event)">
+        <option value="">Select Group</option>
+    </div>
+
+
   </form>
 
   </div>
