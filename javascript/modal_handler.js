@@ -36,6 +36,12 @@ aspan.onclick = function() {
 
 qspan.onclick = function() {
     qmodal.style.display = "none";
+    document.getElementById("quicksplit-input-numberpeople").value = "";
+    document.getElementById("quicksplit-input-billtotal").value = "";
+    document.getElementById("quicksplit-input-tip").value = "0";
+    document.getElementById("quicksplit-input-tax").value = "0";
+    document.getElementById('quicksplit-curtain').style.display = "none";
+
 }
 
 cspan.onclick = function() {
