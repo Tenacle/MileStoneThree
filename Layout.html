@@ -133,8 +133,8 @@
 
     <div id="advSplit_BillTotal">
       Total: $ <input type="number" name="billTotal" placeholder="00.00">
-      TAX(<button class="smallButton" type="button" name="taxType"> % </button>): <input type="number" name="billTax" placeholder="13">
-      TIP(<button class="smallButton" type="button" name="tipType"> % </button>): <input type="number" name="billTip" placeholder="0">
+      <button class="smallButton" type="button" name="taxType">TAX(%)</button>: <input type="number" name="billTax" placeholder="13">
+      <button class="smallButton" type="button" name="tipType">TIP(%)</button>: <input type="number" name="billTip" placeholder="0">
     </div>
 
     <div id="advSplit_BillItems">
@@ -142,9 +142,28 @@
     </div>
 
     <div id="advSplit_Groups">
-      <select name="billGroups" id="advSplit_BillGroups" onchange="processGroupReq(event)">
+      <select name="billGroups" default=0 id="advSplit_BillGroups" onchange="processGroupReq(event)">
         <option value="">Select Group</option>
+        <option value="0">Family</option>
+        <option value="1">Friends</option>
+        <option value="2">Workmates</option>
+      </select>
+
+      <span id="advSplit_SplitType">
+        <select name="billGroups" default=0 id="advSplit_BillGroups" onchange="processGroupReq(event)">
+          <option value="">Split Type</option>
+          <option value="0">Even</option>
+          <option value="1">Percent</option>
+          <option value="2">Weight</option>
+        </select>
+      </span>
+
+      <div id="advSplit_Split">
+
+
+      </div>
     </div>
+
 
 
   </form>

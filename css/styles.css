@@ -74,7 +74,7 @@ display: none;
 
 /*----------------------------Search Bar--------------------------------- */
 /*input[type=text] {*/
-.searchBar {
+#searchBar {
 	position: absolute;
 	top: 250px;
 	left: 50px;
