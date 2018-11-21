@@ -11,39 +11,51 @@ var cbtn = document.getElementById("codeID");
 var abtbtn = document.getElementById("abtusID");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var aspan = document.getElementById("aclose");
+var cspan = document.getElementById("cclose");
+var qspan = document.getElementById("qclose");
+var abtspan = document.getElementById("abtclose");
 
 // When the user clicks the button, open the modal 
 abtn.onclick = function() {
-  amodal.style.className = "modal";
+    amodal.style.display = "block";
 }
 qbtn.onclick = function() {
-  qmodal.style.className = "modal";
+    qmodal.style.display = "block";
 }
 cbtn.onclick = function() {
-  cmodal.style.className = "modal";
+    cmodal.style.display = "block";
 }
 abtbtn.onclick = function() {
-  abtmodal.style.className = "modal";
+    abtmodal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  amodal.style.className = "hidden";
-  qmodal.style.className = "hidden";
-  cmodal.style.className = "hidden";
-  abtmodal.style.className = "hidden";
+aspan.onclick = function() {
+    amodal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
+qspan.onclick = function() {
+    qmodal.style.display = "none";
+}
+
+cspan.onclick = function() {
+    cmodal.style.display = "none";
+}
+
+abtspan.onclick = function() {
+    abtmodal.style.display = "none";
+}
+
+
+//When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == amodal) {
-      amodal.style.className = "hidden";
+      amodal.style.display = "none";
   }else if (event.target == qmodal) {
-      qmodal.style.className = "hidden";
+      qmodal.style.display = "none";
   }else if (event.target == cmodal) {
-      cmodal.style.className = "hidden";
+      cmodal.style.display = "none";
   }else if (event.target == abtmodal) {
-  abtmodal.style.className = "hidden";
+  abtmodal.style.display = "none";
   }
 }
