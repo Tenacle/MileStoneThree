@@ -22,6 +22,10 @@ position: absolute;
 display: none;
 }
 
+.hidden {
+    display: none;
+}
+
 /* -------------------------- Recent Bills Styles ---------------------------*/
 .nameBills{
 	font-family: "Arial Black";
@@ -252,6 +256,9 @@ display: none;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
 	height: 60%;
+}
+#advSplit_modal-content {
+	height: auto;
 }
 
 /*The little X thats in corner of the quicksplit popup*/

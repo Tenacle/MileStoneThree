@@ -1,5 +1,5 @@
 var itemlistcount = 0;
-var newinput = function() {
+var newItem = function() {
   var parent = document.getElementById("advSplit_BillItems");
 
   var div = document.createElement("div");
