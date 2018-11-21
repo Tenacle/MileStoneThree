@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="./css/Styles.css">
+	<link rel="stylesheet" href="./css/Styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -99,12 +100,50 @@
 
   <!-- Modal content -->  
 	<!-- popup content -->	
-  <div class="modal-content">
-    <span id="qclose" class="close">&times;</span>
-  <h3 class = "billtitles"> Quick Split </h3>
-    <p>This will become a quick split..</p>
-  </div>
+	<div id = "quicksplit-content">
+		<div id = "quicksplit-header">
+			<span class="close" id = "qclose">&times;</span>
+			<div id = "quicksplit-title">
+				<h1>Quick Split</h1>
+			</div>
+		</div>
+	
+		<div id ="quicksplit-curtain">
+			<div id = "quicksplit-total-message"></div>
+			
+			<button id = "quicksplit-back-button" type = "button">Go back</button>
+		</div>
+	
+		<div id = "quicksplit-background">
+			<div id = "quicksplit-inputs-container">
+				<div class="quicksplit-input-container">
+					<div class = "quicksplit-input-name">Number of People </div>
+						<input id ="quicksplit-input-numberpeople" 
+								type = "number" name = "numberPeople" min = "1" required>
+				</div>
 
+				<div class="quicksplit-input-container">
+					<div class = "quicksplit-input-name">Bill Total ($): </div>
+					<input id = "quicksplit-input-billtotal"
+								type = "number"  min = "0" required>
+				</div>
+
+				<div class="quicksplit-input-container">
+					<div class = "quicksplit-input-name">Tip (%): </div>
+					<input id = "quicksplit-input-tip"
+								type = "number" value = "0" min = "0" required>
+				</div>
+
+				<div class="quicksplit-input-container">
+					<div class = "quicksplit-input-name">Tax (%): </div>
+					<input id = "quicksplit-input-tax"
+								type = "number" value = "0" min = "0" required>
+				</div>  
+
+			</div>
+		<button type="button" id ="quicksplit-calculate-button">Calculate</button> 
+		</div>
+	</div>
 </div>
 
 <!-- Advanced split Modal -->
@@ -281,6 +320,7 @@
 <script src="./javascript/sidechange.js"></script>
 <script src="./javascript/itemlist_adder.js"></script>
 <script src="./javascript/modal_handler.js"></script>
+<script src="./javascript/quicksplit_handler.js"></script>
 <!-- ============================================ end of scripts ================================================== -->
 
 </body>
