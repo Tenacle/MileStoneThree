@@ -141,28 +141,29 @@
       <button type="button" name="additem" onclick="newinput()"> + add item</button>
     </div>
 
-    <div id="advSplit_Groups">
-      <select name="billGroups" default=0 id="advSplit_BillGroups" onchange="processGroupReq(event)">
-        <option value="">Select Group</option>
-        <option value="0">Family</option>
-        <option value="1">Friends</option>
-        <option value="2">Workmates</option>
+  <div id="advSplit_Groups">
+    <select name="billGroups" default=0 id="advSplit_BillGroups" onchange="processGroupReq(event)">
+      <option value="">Select Group</option>
+      <option value="0">Family</option>
+      <option value="1">Friends</option>
+      <option value="2">Workmates</option>
+    </select>
+
+    <span class="hidden" id="advSplit_GroupConfig">
+      <select name="billSplitType" default=0 id="advSplit_SplitType" onchange="processSplitType(event)">
+        <option value="">Split Type</option>
+        <option value="0">Even</option>
+        <option value="1">Percent</option>
+        <option value="2">Weight</option>
       </select>
 
-      <span id="advSplit_SplitType">
-        <select name="billGroups" default=0 id="advSplit_BillGroups" onchange="processGroupReq(event)">
-          <option value="">Split Type</option>
-          <option value="0">Even</option>
-          <option value="1">Percent</option>
-          <option value="2">Weight</option>
-        </select>
-      </span>
-
-      <div id="advSplit_Split">
-
-
+      <div id="advSplit_Users">
       </div>
+    </span>
+
+    <div id="advSplit_Split">
     </div>
+  </div>
 
 
 
