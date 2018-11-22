@@ -302,12 +302,16 @@ display: none;
 /*------------------------------- quick split pop up starts ---------------------------*/
 
 #quicksplit-content{
-    margin: 15% auto; /* 15% from the top and centered */
     width: 500px; /* Could be more or less, depending on screen size */
-	height: 60%;
+	height: 450px;
     background-color: #0d47a1;
     overflow: hidden;
     box-shadow: 5px 5px 5px grey;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -225px;
+    margin-left: -250px;
 }
 
 #quicksplit-header{
