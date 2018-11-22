@@ -7,32 +7,37 @@ var newItem = function() {
     var div = document.createElement("div");
     div.className = "advSplit_ItemRow";
 
+    var inchild = document.createElement("span");
     var child = document.createElement("input");
     child.className = "advSplit_ItemName";
     child.type = "text";
     child.id = "itemName" + itemListLength;
     child.placeholder = "Item" + itemListLength;
-    child.value = child.placeholder;
-    div.appendChild(child);
+    inchild.appendChild(child);
+    div.appendChild(inchild);
+
+
+    var inchild = document.createElement("span");
+    inchild.className = "advSplit_ItemMoney";
 
     var child = document.createElement("span");
     child.className = "money";
     child.innerHTML = "$";
-    div.appendChild(child);
+    inchild.appendChild(child);
 
     var child = document.createElement("input");
     child.type = "number";
-    child.className = "advSplit_UserPrice";
+    child.className = "advSplit_ItemPrice";
     child.id = "itemPrice" + itemListLength;
     child.placeholder = "00.00";
-    child.value = child.placeholder;
-    div.appendChild(child);
+    inchild.appendChild(child);
+    div.appendChild(inchild);
 
     itemList.appendChild(div);
 }
 
 function processGroupReq(event) {
-    var group = document.getElementById("advSplit_BillGroups");
+    var group = document.getElementById("advSplit_BillGroupList");
     var groupSelected = group.options[group.selectedIndex].value;
     var groupConfig = document.getElementById("advSplit_GroupConfig");
 
@@ -51,18 +56,22 @@ function processAddUser(event) {
     var div = document.createElement("div");
     div.className = "advSplit_UserRow";
 
+    var inchild = document.createElement("span");
     var child = document.createElement("input");
     child.className = "advSplit_UserName";
     child.type = "text";
     child.id = "userName" + userListLength;
     child.value = newUserList.options[newUserList.selectedIndex].value;
     child.readOnly = true;
-    div.appendChild(child);
+    inchild.appendChild(child);
+    div.appendChild(inchild);
 
+    var inchild = document.createElement("span");
+    inchild.className = "advSplit_UserMoney";
     var child = document.createElement("span");
     child.className = "money";
-    child.innerHTML = "$";
-    div.appendChild(child);
+    child.innerHTML = " $";
+    inchild.appendChild(child);
 
     var child = document.createElement("input");
     child.type = "number";
@@ -70,7 +79,8 @@ function processAddUser(event) {
     child.id = "userPrice" + userListLength;
     child.value = "00.00";
     child.readOnly = true;
-    div.appendChild(child);
+    inchild.appendChild(child);
+    div.appendChild(inchild);
 
     userList.appendChild(div);
     newUserList.remove(newUserList.selectedIndex);
@@ -96,3 +106,4 @@ function myFunction() {
 //    }
 //  }
 //}
+

@@ -406,10 +406,11 @@ display: none;
 /*------------------------------- advanced split pop up starts ---------------------------*/
 #advSplit_modal-content {
 	height: auto;
+    width: 30%;
 }
 #advSplit_Form {
     padding: 10px;
-    margin-top:100px;
+    margin-top:80px;
 }
 
 .billheaders{
@@ -417,20 +418,13 @@ display: none;
     display: block;
     float: left;
     width: 100%;
-    height: 100px;
+    height: 80px;
 }
 
 #advSplit_BillInfo {
     display: block;
-    height: 100px;
-    text-align: right;
-    margin: 10px;
-}
-#advSplit_BillInfo .dropdownBtn {
-    width: 50px;
-    height: 50px;
-    background: #ffffff;
-
+    height: auto;
+    margin: 10px 25px;
 }
 #advSplit_BillInfo img {
     width: 20px;
@@ -438,6 +432,11 @@ display: none;
     padding: none;
     margin: none;
     background: none;
+}
+#advSplit_BillInfo .dropdownBtn {
+    width: 55px;
+    height: 55px;
+    background: #ffffff;
 }
 #advSplit_BillInfo .splitbtns {
     width: 20px;
@@ -447,43 +446,164 @@ display: none;
     background: none;
 }
 #advSplit_BillInfo .dropdown-content {
-    min-width: 150px;
+    min-width: auto;
     padding: none;
-}
-#advSplit_BillInfo .rightinline-block {
-    display: inline-block;
-    text-align: right;
 }
 #advSplit_BillInfo .leftinline-block {
     display: inline-block;
-    text-align: right;
+    text-align: left;
+    width: auto;
+}
+#advSplit_BillInfo .rightinline-block {
+    display: inline-block;
+    width: 86%;
+    font-size: 14pt;
+}
+#advSplit_BillName {
+    font-size: 16pt;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 5px;
 }
 
 #advSplit_BillTotal {
-    height: 100px;
-    margin: 10px;
+    height: auto;
+    margin: 10px 25px;
+    margin-left: 35px;
 }
 #advSplit_BillTotal .leftinline-block {
     vertical-align: middle;
+    text-align: left;
     display: inline-block;
-    width: 65%;
+    width: 67%;
+}
+#advSplit_BillTotal .dropdownBtn {
+    width: 55px;
+    height: 55px;
+    background: #ffffff;
+}
+#advSplit_BillTotal .splitbtns {
+    width: auto;
+    height: auto;
+    background: none;
+}
+#advSplit_BillTotal .dropdown-content {
+    min-width: auto;
+    padding: none;
 }
 #advSplit_BillTotal .rightinline-block {
     vertical-align: middle;
-    text-align: right;
+    text-align: left;
     display: inline-block;
-    width: 30%;
+    width: auto;
 }
 #advSplit_BillTotal button {
     width: 70px;
 }
 #advSplit_BillTotal input {
-    width: 150px;
+    width: 200px;
+    font-size: 14pt;
 }
 #advSplit_BillTotal input[class="inputNumber-small"] {
-    width: 50px;
+    width: 70px;
+    font-size: 12pt;
 }
 
+#advSplit_BillItems {
+    font-size: 12pt;
+    margin: 10px 25px;
+    padding: 0px 10px;
+}
+#advSplit_BillItems button {
+    margin: 5px 0px;
+}
+#advSplit_BillItems input {
+    font-size: 12pt;
+}
+#advSplit_BillItems .advSplit_BillItemList {
+    margin-top: 10px;
+}
+#advSplit_BillItems .advSplit_ItemRow {
+    padding: 0px 20px;
+    font-size: 14pt;
+}
+#advSplit_BillItems .advSplit_ItemName input {
+    width: 250px;
+}
+#advSplit_BillItems .advSplit_ItemMoney {
+    width: 100px;
+    margin-left: 50px;
+}
+#advSplit_BillItems .advSplit_ItemMoney input {
+    width: 110px;
+}
+
+
+#advSplit_BillGroups {
+    font-size: 12pt;
+    margin: 10px 25px;
+    padding: 0px 10px;
+}
+#advSplit_BillGroups .leftinline-block select { 
+    margin: 5px 0px;
+    display: inline-block;
+    font-size: 14pt;
+}
+#advSplit_BillGroups .rightinline-block select { 
+    display: inline-block;
+    margin-left: 100px;
+}
+#advSplit_BillGroups .advSplit_UserRow {
+    padding: 0px 20px;
+    font-size: 14pt;
+}
+#advSplit_BillGroups .advSplit_SplitType{
+    text-align: right;
+}
+#advSplit_billGroups .advSplit_BillUserList {
+    margin-top: 10px;
+}
+.advSplit_UserRow {
+    padding: 0px 20px;
+}
+.advSplit_UserRow input {
+    font-size: 12pt;
+    width: 200px;
+}
+.advSplit_UserMoney {
+    width: 100px;
+    margin-left: 50px;
+}
+.advSplit_UserMoney input {
+    width: 110px;
+}
+#advSplit_AddUser {
+    margin: 10px 0px;
+}
+
+
+#advSplit_Finalize {
+    font-size: 12pt;
+    margin: 10px 25px;
+    padding: 0px 10px;
+}
+#advSplit_Finalize .leftinline-block {
+    display: inline-block;
+    text-align: left;
+}
+#advSplit_Finalize .leftinline-block select {
+    font-size: 14pt;
+}
+
+#advSplit_Finalize .rightinline-block {
+    display: inline-block;
+    text-align: right;
+    width: 80%;
+}
+
+#advSplit_Finalize .rightinline-block button {
+    font-size: 14pt;
+}
 /*------------------------------- advanced split pop up ends ---------------------------*/
 
 /*------------------------------- some other stuff ---------------------------*/
@@ -502,8 +622,7 @@ display: none;
 
 .money {
     font-size: 16pt;
-    margin-left: 4px;
-    margin-right: 4px;
+    margin: 0px 6px;
 }
 
 button:hover{
@@ -511,7 +630,7 @@ button:hover{
 }
 
 label {
-    font-size: 14pt;
+    font-size: 16pt;
 }
 
 .inputNumber-small {
@@ -527,13 +646,11 @@ label {
     font-size: 16px;
     border: none;
 }
-
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
     display: inline-block;
 }
-
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
@@ -543,7 +660,6 @@ label {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-
 /* Links inside the dropdown */
 .dropdown-content a {
     color: black;
@@ -551,12 +667,14 @@ label {
     text-decoration: none;
     display: block;
 }
-
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #ddd;}
-
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
-
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+
+
+

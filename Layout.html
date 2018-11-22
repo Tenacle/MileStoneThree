@@ -190,6 +190,7 @@
               <option value="custom">Custom...</option>
             </select>
           </div>
+        </span>
       </div>
 
       <div id="advSplit_BillTotal">
@@ -219,47 +220,64 @@
         </span>
       </div>
 
-      <div id="advSplit_BillItemList">
+      <div id="advSplit_BillItems">
         <button type="button" onclick="newItem()"> + add item</button>
+        <div id="advSplit_BillItemList"></div>
       </div>
 
-    <div id="advSplit_Groups">
-      <select id="advSplit_BillGroups" onchange="processGroupReq(event)">
-        <option value="">Select Group</option>
-        <option value="0">Family</option>
-        <option value="1">Friends</option>
-        <option value="2">Workmates</option>
-      </select>
+      <div id="advSplit_BillGroups">
+        <span class="leftinline-block">
+          <select id="advSplit_BillGroupList" onchange="processGroupReq(event)">
+            <option value="">Select Group</option>
+            <option value="0">Family</option>
+            <option value="1">Friends</option>
+            <option value="2">Workmates</option>
+          </select>
+        </span>
 
-      <span class="hidden" id="advSplit_GroupConfig">
-        <select id="advSplit_SplitType" onchange="processSplitType(event)">
-          <option value="">Split Type</option>
-          <option value="0">Even</option>
-          <option value="1">Percent</option>
-          <option value="2">Weight</option>
-        </select>
+        <span class="rightinline-block hidden" id="advSplit_GroupConfig">
+          <select id="advSplit_SplitType" onchange="processSplitType(event)">
+            <option value="">Split Type</option>
+            <option value="0">Even</option>
+            <option value="1">Percent</option>
+            <option value="2">Weight</option>
+          </select>
 
-        <div id="advSplit_UserList">
-          <div class="advSplit_UserRow">
-            <input type="text" class="advSplit_UserName" id="userName0" value="User (you)" readonly><span class="money">$</span><input type="number" class="advSplit_UserPrice" id="userPrice0" value="00.00" readonly>
+          <div id="advSplit_UserList">
+            <div class="advSplit_UserRow">
+              <span><input type="text" class="advSplit_UserName" id="userName0" value="User (you)" readonly></span>
+              <span class="advSplit_UserMoney"><span class="money">$</span><input type="number" class="advSplit_UserPrice" id="userPrice0" value="00.00" readonly></span>
+            </div>
+            <div class="advSplit_UserRow">
+              <span><input type="text" class="advSplit_UserName" id="userName1" value="Jack" readonly></span>
+              <span class="advSplit_UserMoney"><span class="money">$</span><input type="number" class="advSplit_UserPrice" id="userPrice1" value="00.00" readonly></span>
+            </div>
+            <div class="advSplit_UserRow">
+              <span><input type="text" class="advSplit_UserName" id="userName2" value="Fred" readonly></span>
+              <span class="advSplit_UserMoney"><span class="money">$</span><input type="number" class="advSplit_UserPrice" id="userPrice2" value="00.00" readonly></span>
+            </div>
           </div>
-          <div class="advSplit_UserRow">
-            <input type="text" class="advSplit_UserName" id="userName1" value="Jack" readonly><span class="money">$</span><input type="number" class="advSplit_UserPrice" id="userPrice1" value="00.00" readonly>
-          </div>
-          <div class="advSplit_UserRow">
-            <input type="text" class="advSplit_UserName" id="userName2" value="Fred" readonly><span class="money">$</span><input type="number" class="advSplit_UserPrice" id="userPrice2" value="00.00" readonly>
-          </div>
-        </div>
-        <select id="advSplit_AddUser" onchange="processAddUser(event)">
-          <option value="">Select User</option>
-          <option value="Sam">Sam</option>
-          <option value="Jon">Jon</option>
-          <option value="Van">Van</option>
-        </select>
-      </span>
+          <select id="advSplit_AddUser" onchange="processAddUser(event)">
+            <option value="">Select User</option>
+            <option value="Sam">Sam</option>
+            <option value="Jon">Jon</option>
+            <option value="Van">Van</option>
+          </select>
+        </span>
 
+      </div>
       <div id="advSplit_Finalize">
-        <button type="button" id="advSplit_Submit" onclick="newItem()"> + add item</button>
+        <span class="leftinline-block">
+          <select id="advSplit_AddUser" onchange="processSettle(event)">
+            <option value="">Settled</option>
+            <option value="Sam">User1</option>
+            <option value="Jon">User2</option>
+            <option value="Van">User3</option>
+          </select>
+        </span>
+        <span class="rightinline-block">
+          <button type="button" id ="quicksplit:wcalculate-button">Done</button> 
+        </span>
       </div>
     </div>
   </div>
