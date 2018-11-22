@@ -36,12 +36,7 @@ aspan.onclick = function() {
 
 qspan.onclick = function() {
     qmodal.style.display = "none";
-    document.getElementById("quicksplit-input-numberpeople").value = "";
-    document.getElementById("quicksplit-input-billtotal").value = "";
-    document.getElementById("quicksplit-input-tip").value = "0";
-    document.getElementById("quicksplit-input-tax").value = "0";
-    document.getElementById('quicksplit-curtain').style.display = "none";
-
+    resetqmodal();
 }
 
 cspan.onclick = function() {
@@ -59,9 +54,19 @@ window.onclick = function(event) {
       amodal.style.display = "none";
   }else if (event.target == qmodal) {
       qmodal.style.display = "none";
+      resetqmodal();
   }else if (event.target == cmodal) {
       cmodal.style.display = "none";
   }else if (event.target == abtmodal) {
   abtmodal.style.display = "none";
   }
+}
+
+//resets values in quicksplit modal
+function resetqmodal(){
+    document.getElementById("quicksplit-input-numberpeople").value = "";
+    document.getElementById("quicksplit-input-billtotal").value = "";
+    document.getElementById("quicksplit-input-tip").value = "0";
+    document.getElementById("quicksplit-input-tax").value = "0";
+    document.getElementById('quicksplit-curtain').style.display = "none";
 }
