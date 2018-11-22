@@ -361,7 +361,7 @@ display: none;
     padding: 10px 10px 10px 10px;
     height: 258px;
     color: white;
-    font-size: 100px;
+    font-size: 60px;
     text-align: center;
     text-shadow: 2px 2px grey;
 }
@@ -369,7 +369,10 @@ display: none;
 #quicksplit-title{
     color: white;
     float: left;
-    margin-left: 10px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+
     /* not highlightable */
     -moz-user-select: -moz-none;
     -khtml-user-select: none;
