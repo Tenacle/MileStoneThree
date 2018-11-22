@@ -36,7 +36,7 @@
 
 <!-- User Image and Number And Name -->
 <div class = "profileimg" >
-	<img src = "C:\Users\Jonat\Pictures\user.png">
+	<img src = "./icon/user.png">
 </div>
 <div id="profileID" class = "profileinfo">
 	<h3 style = "margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;">USER</h3>
@@ -153,37 +153,78 @@
   <!-- Modal content -->  
   <div id="advSplit_modal-content" class="modal-content">
 
-    <span id="aclose" class="close">&times;</span>
-    <h3 class = "billtitles"> Advanced Split </h3>
+    <div class="billheaders">
+      <span id="aclose" class="close">&times;</span>
+      <h3 class="billtitles"> Advanced Split </h3>
+    </div>
 
     <!-- Bill form -->
-    <form id="advSplit_Form" action="something.js">
-
+    <div id="advSplit_Form">
       <div id="advSplit_BillInfo">
-        <input type="text" name="billName" placeholder="Enter Bill Name">
-        <input type="date" name="billDate">
-        <select name="billRepeat">
-          <option value="no">Does Not Repeat</option>
-          <option value="daily">Daily</option>
-          <option value="weekly">Weekly</option>
-          <option value="monthly">Monthly</option>
-          <option value="annually">Annually</option>
-          <option value="custom">Custom...</option>
-        </select>
+        <span class="leftinline-block">
+          <div id="advSplit_Currency" class="dropdown">
+            <img class="dropdownBtn" src="./icon/bill.png" alt="bill icon">
+            <div id="advSplit_CurrencyContent" class="dropdown-content">
+              <span class="splitbtns"><img src="./icon/bill.png" alt="bill icon"></span>
+              <span class="splitbtns"><img src="./icon/ball.png" alt="ball icon"></span>
+              <span class="splitbtns"><img src="./icon/fly.png" alt="fly icon"></span>
+              <span class="splitbtns"><img src="./icon/food.png" alt="food icon"></span>
+              <span class="splitbtns"><img src="./icon/fix.png" alt="fix icon"></span>
+
+            </div>
+            </span>
+          </div>
+        </span>
+        <span class="rightinline-block">
+          <div>
+            <input type="text" id="advSplit_BillName" placeholder="Enter Bill Name">
+          </div>
+          <div>
+            <input type="date" id="advSplit_BillDate">
+            <select id="advSplit_BillRepeat">
+              <option value="no">Does Not Repeat</option>
+              <option value="daily">Daily</option>
+              <option value="weekly">Weekly</option>
+              <option value="monthly">Monthly</option>
+              <option value="annually">Annually</option>
+              <option value="custom">Custom...</option>
+            </select>
+          </div>
       </div>
 
       <div id="advSplit_BillTotal">
-        Total: $ <input type="number" name="billTotal" placeholder="00.00">
-        <button class="smallButton" type="button" name="taxType">TAX(%)</button>: <input type="number" name="billTax" placeholder="13">
-        <button class="smallButton" type="button" name="tipType">TIP(%)</button>: <input type="number" name="billTip" placeholder="0">
+        <span class="leftinline-block">
+        <label>Total:</label>
+          <!-- currency button -->
+          <div id="advSplit_Currency" class="dropdown">
+            <span class="dropdownBtn money">$</button>
+            <div id="advSplit_CurrencyContent" class="dropdown-content">
+              <button id="0" class ="splitbtns">Dollar</button>
+              <button id="1" class ="splitbtns">Euro</button>
+              <button id="2" class ="splitbtns">Pound</button>
+              <button id="3" class ="splitbtns">Rupee</button>
+              <button id="4" class ="splitbtns">Yen</button>
+            </div>
+          </div>
+          <input type="number" placeholder="00.00">
+        </span>
+
+        <span class="rightinline-block">
+          <div>
+          <button type="button">TAX (%)</button>: <input class="inputNumber-small" type="number" placeholder="13">
+          <div>
+          </div>
+          <button type="button">TIP (%)</button>: <input class="inputNumber-small" type="number" placeholder="0">
+          </div>
+        </span>
       </div>
 
-      <div id="advSplit_BillItems">
-        <button type="button" name="additem" onclick="newItem()"> + add item</button>
+      <div id="advSplit_BillItemList">
+        <button type="button" onclick="newItem()"> + add item</button>
       </div>
 
     <div id="advSplit_Groups">
-      <select name="billGroups" id="advSplit_BillGroups" onchange="processGroupReq(event)">
+      <select id="advSplit_BillGroups" onchange="processGroupReq(event)">
         <option value="">Select Group</option>
         <option value="0">Family</option>
         <option value="1">Friends</option>
@@ -191,19 +232,25 @@
       </select>
 
       <span class="hidden" id="advSplit_GroupConfig">
-        <select name="billSplitType" id="advSplit_SplitType" onchange="processSplitType(event)">
+        <select id="advSplit_SplitType" onchange="processSplitType(event)">
           <option value="">Split Type</option>
           <option value="0">Even</option>
           <option value="1">Percent</option>
           <option value="2">Weight</option>
         </select>
 
-        <div id="advSplit_Users">
-          User (you)<span class="money">$ <input type="number" name="user0" value="00.00" readonly>
-          Son<span class="money">$ <input type="number" name="user0" value="00.00" readonly>
-          Gen<span class="money">$ <input type="number" name="user0" value="00.00" readonly>
+        <div id="advSplit_UserList">
+          <div class="advSplit_UserRow">
+            <input type="text" class="advSplit_UserName" id="userName0" value="User (you)" readonly><span class="money">$</span><input type="number" class="advSplit_UserPrice" id="userPrice0" value="00.00" readonly>
+          </div>
+          <div class="advSplit_UserRow">
+            <input type="text" class="advSplit_UserName" id="userName1" value="Jack" readonly><span class="money">$</span><input type="number" class="advSplit_UserPrice" id="userPrice1" value="00.00" readonly>
+          </div>
+          <div class="advSplit_UserRow">
+            <input type="text" class="advSplit_UserName" id="userName2" value="Fred" readonly><span class="money">$</span><input type="number" class="advSplit_UserPrice" id="userPrice2" value="00.00" readonly>
+          </div>
         </div>
-        <select name="billAddUser" id="advSplit_AddUser" onchange="processAddUser(event)">
+        <select id="advSplit_AddUser" onchange="processAddUser(event)">
           <option value="">Select User</option>
           <option value="Sam">Sam</option>
           <option value="Jon">Jon</option>
@@ -211,16 +258,14 @@
         </select>
       </span>
 
-      <div id="advSplit_Split">
+      <div id="advSplit_Finalize">
+        <button type="button" id="advSplit_Submit" onclick="newItem()"> + add item</button>
       </div>
     </div>
+  </div>
 
-
-
-    </form>
 
   </div>
-  
 </div>
 
 <!-- Code Split popup -->
