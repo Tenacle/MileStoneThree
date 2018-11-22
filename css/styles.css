@@ -394,7 +394,7 @@ display: none;
 }
 
 
-input[type="number"]{
+.inputNumber-big {
     font-size: 20px;
     margin-left: 10px;
     padding: 10px 10px 10px 5px;
