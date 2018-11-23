@@ -463,8 +463,8 @@ display: none;
     width: 200px; 
     padding: 10px;
     position: absolute;
-    bottom: 32px;
-    right: 10px;
+    bottom: 15px;
+    right: 16px;
 }
 
 #quicksplit-input-container{
