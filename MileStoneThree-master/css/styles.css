@@ -3,7 +3,8 @@ html{
     overflow-x: hidden;
 }
 header {
-	background-color: #4478C3;
+    background-color: #002171;
+    
 	text-align: Left;
 	width: 100%;
 	padding: 20px;
@@ -12,6 +13,9 @@ header {
     position: absolute;
     top: 0px;
     left: 0px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
 }
 
 .wrapper{
@@ -127,15 +131,28 @@ display: none;
 	background-color: #e7e7e7; 
     border: none;
     color: black;
+    width: 95%;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 5px;
     cursor: pointer;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
 }
-.abtusbtn:hover {background-color: Gainsboro;}
+.abtusbtn:hover {
+    background-color: Gainsboro;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+
+#abtmodalmsg{
+    padding-left:20px;
+}
 
 /*Little X in the top right of the about us popup*/
 .aclose {color: #aaa; float: right; font-size: 28px; font-weight: bold;}
@@ -162,7 +179,7 @@ display: none;
     border: none;  
 	color: white;
 }
-.dotmenu{border: none; background-color: #4478C3 ;}
+.dotmenu{border: none; background-color: #002171 ;}
 .dotmenu:hover{cursor: pointer;}
 /*---------------------------- Three dot menu ends --------------------------- */
 
@@ -178,10 +195,15 @@ display: none;
     display: block;
 	border: none;
 	background: white;
-	font-size: 15px;
+    font-size: 15px;
+    
+    -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
 }
 
-.sidebtns:focus{background: #4478C3;}
 .sidebtns:hover{
     cursor: pointer;
     background:  #4478C3;
@@ -211,7 +233,7 @@ display: none;
 
 /* the button itself*/
 .createbillbtn {
-    background-color: #4478C3;
+    background-color: #002171;
     color: white;
     padding: 8px;
     font-size: 16px;
@@ -229,7 +251,7 @@ display: none;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-.CreateBill:hover .createbillbtn {background-color: #3F6BA9;}
+.CreateBill:hover .createbillbtn {background-color: #002171;}
 
 /* the text in the button*/
 .CreateBill-content a { 
@@ -290,8 +312,26 @@ display: none;
 }
 
 /*The little X thats in corner of the quicksplit popup*/
-.close {color: #aaa;float: right;font-size: 28px;font-weight: bold; margin-right: 10px;}
-.close:hover, .qclose:focus {color: black; text-decoration: none; cursor: pointer;}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold; 
+    margin-right: 10px;
+
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+.close:hover, .qclose:focus {
+    color: black; 
+    text-decoration: none; 
+    cursor: pointer;
+
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
 
 /*-------------------------------------- bill split pop up ends ----------------------------*/
 
@@ -306,7 +346,7 @@ display: none;
 
 /* The banner at the bottom of the screen */
 .footer{
-    background-color: #4478C3;
+    background-color: #002171;
 	position: absolute;
     left: 0;
     bottom: 0;
@@ -338,6 +378,7 @@ display: none;
     left: 50%;
     margin-top: -225px;
     margin-left: -250px;
+    
 }
 
 #quicksplit-header{
@@ -365,7 +406,7 @@ display: none;
     z-index: 2;
     display: none;
     overflow: hidden;
-    background: #3180f9;
+    background: #0d47a1;
 }
 #quicksplit-inputs-container{
     float: left;
@@ -388,11 +429,11 @@ display: none;
     -webkit-user-select: none;
 }
 
-#quicksplit-total-message{
+#quicksplit-total-message, #quicksplit-split-message{
     padding: 10px 10px 10px 10px;
-    height: 258px;
+    height: auto;
     color: white;
-    font-size: 100px;
+    font-size: 50px;
     text-align: center;
     text-shadow: 2px 2px grey;
 }
@@ -400,7 +441,9 @@ display: none;
 #quicksplit-title{
     color: white;
     float: left;
-    margin-left: 10px;
+    margin-left: 25px;
+    margin-top: -6px;
+    font-size: 23px;
     /* not highlightable */
     -moz-user-select: -moz-none;
     -khtml-user-select: none;
@@ -417,10 +460,11 @@ display: none;
 }
 
 #quicksplit-back-button{
-    float: right;
-    width: 200px;
-    margin: 0px 14px 5px 5px;   
+    width: 200px; 
     padding: 10px;
+    position: absolute;
+    bottom: 32px;
+    right: 10px;
 }
 
 #quicksplit-input-container{
@@ -644,6 +688,9 @@ display: none;
     border: none;
     box-shadow: 1px 1px 1px grey;
     text-align: right;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
 }
 
 .money {

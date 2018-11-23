@@ -55,10 +55,12 @@ $(document).ready(function(){
   //------------------------------------------------------
   // calculates how much is to be split between users
   function calculateSplit(numPeople, total, tax, tip){
-    split = (total + (total*tax) + (total*tip))/numPeople;
-    split = split.toFixed(2);
-    var element = document.getElementById("quicksplit-total-message");
-    element.innerHTML =  "Split by: $" + split;
+    finalTotal = (total + (total*tax) + (total*tip)).toFixed(2);
+    split = (finalTotal/numPeople).toFixed(2);
+    var element1 = document.getElementById("quicksplit-total-message");
+    var element2 = document.getElementById("quicksplit-split-message")
+    element1.innerHTML = "Your total is $" + finalTotal;
+    element2.innerHTML = "You each pay: $" + split;
   }
   //------------------------------------------------------
   //Event listeners for if the user presses enter key during input
