@@ -2,6 +2,13 @@
 
 var itemlistcount = 0;
 var newItem = function() {
+
+    var listCheck = document.getElementById("advSplit_BillItemList");
+    var listSize = listCheck.getElementsByTagName('div').length;
+    var isThereTotal = document.getElementById("totalBill");
+    console.log("Here we have ", listSize);
+    isThereTotal.readOnly = true
+
     var itemList = document.getElementById("advSplit_BillItemList");
     var itemListLength = itemList.getElementsByTagName('div').length;
     var div = document.createElement("div");
@@ -29,12 +36,44 @@ var newItem = function() {
     child.type = "number";
     child.className = "advSplit_ItemPrice";
     child.id = "itemPrice" + itemListLength;
-    child.placeholder = "00.00";
+
+    if( listSize < 1 ) {
+        child.value = parseInt(isThereTotal.value);
+    }else {
+        child.placeholder = "00.00";
+    }
+    
+    
     inchild.appendChild(child);
     div.appendChild(inchild);
 
     itemList.appendChild(div);
 }
+
+function doSum() {
+    var listCheck = document.getElementById("advSplit_BillItemList");
+    var listSize = listCheck.getElementsByTagName('div').length;
+    var total = 0;
+    for (var i = 0; i < listSize; i++) {
+        var adder = document.getElementById("itemPrice"+i).value;
+        if (adder != "") {
+            total += parseInt(document.getElementById("itemPrice"+i).value);
+        }
+    }
+    var isThereTotal = document.getElementById("totalBill");
+    isThereTotal.value = total;
+}
+
+document.onkeypress = function(e) {
+    e = e || window.event;
+    var charCode = (typeof e.which == "number") ? e.which : e.keyCode;
+    var listCheck = document.getElementById("advSplit_BillItemList");
+    var listSize = listCheck.getElementsByTagName('div').length;
+    if (listSize > 0) {
+        doSum();
+    }
+    recalculate();
+};
 
 var GroupList = {
     "Family" : [ "Mom", "Dad", "Sis", "Bro" ],
@@ -188,29 +227,29 @@ function recalculate() {
     var actualSum = 0;
     if (/%/.test(document.getElementById("advSplit_Tax").textContent)) {
         console.log("%%%% by tax");
-        var qqq = parseInt(document.getElementById("taxValue").value);
+        var qqq = parseInt(document.getElementById("taxValue").value)/100;
         if (qqq != 0 ) {
-            actualSum = parseInt(getTotal) + parseInt(getTotal * qqq);
+            actualSum = parseInt(getTotal) + parseInt(getTotal) * parseInt(qqq);
         }
     }else {
         console.log("$$ by tax");
         actualSum = parseInt(getTotal) + parseInt(document.getElementById("taxValue").value);
     }
+    console.log(actualSum);
     if (/%/.test(document.getElementById("advSplit_Tip").textContent)) {
         console.log("%%%% by tip");
-        var qqq = parseInt(document.getElementById("taxValue").value);
+        var qqq = parseInt(document.getElementById("taxValue").value)/100;
         if (qqq != 0 ) {
-            actualSum = parseInt(getTotal) + parseInt(getTotal * qqq);
+            actualSum += parseInt(getTotal) * parseInt(qqq);
         }
     }else {
         console.log("$$ by tip");
-        actualSum = parseInt(getTotal) + parseInt(document.getElementById("tipValue").value);
+        actualSum += parseInt(document.getElementById("tipValue").value);
     }
     console.log(actualSum);
-    console.log(userListLength);
     var splitEven = parseInt(actualSum)/parseInt(userListLength);
     for (var i = 0; i < userListLength; i++) {
-        document.getElementById("userPrice"+i).value = splitEven;
+        document.getElementById("userPrice"+i).value = parseInt(splitEven);
     }
 }
 
@@ -219,6 +258,12 @@ document.addEventListener('click', function(e) {
     var target = e.target || e.srcElement,
         text = target.textContent || target.innerText;   
     processFoundElem(target);
+    if (listSize > 0) {
+        doSum();
+    }
+    var listCheck = document.getElementById("advSplit_BillItemList");
+    var listSize = listCheck.getElementsByTagName('div').length;
+    recalculate();
 }, false);
 
 function processFoundElem(target) {
