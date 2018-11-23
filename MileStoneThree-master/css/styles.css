@@ -1,21 +1,36 @@
 html{
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 header {
-	background-color: #4478C3;
+    background-color: #002171;
+    
 	text-align: Left;
 	width: 100%;
 	padding: 20px;
 	padding-left: 60px;
 	color: white;
-	position: absolute;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+
+.wrapper{
+    display: flex;
+    height: calc(100vh - 30px);
+}
+.sidebar{
+    height: 100%;
 }
 
 /* Style of the blue header*/
 .mainStyle{
-top: 125px;
+top: 70px;
 left: 325px;
-height:700px;
+height: calc(100% - 100px);
 width:75%;
 border:none;
 font:16px/26px;
@@ -31,18 +46,18 @@ display: none;
 /* -------------------------- Recent Bills Styles ---------------------------*/
 .nameBills{
 	position: absolute;
-	top: 450px;
+	top: 380px;
 	left: 0px;
-	padding-left: 50px;
+	padding-left: 20px;
 }
 /* Style for the different icons */
-.sumIcon1{	position: absolute;	top: 550px;	left: 25px;}
+.sumIcon1{ float:left; margin-right: 10px;}
 .sumIcon1 img{width: 40px; height: auto;}
 
-.sumIcon2{	position: absolute;	top: 645px;	left: 25px;}
+.sumIcon2{ float:left; margin-right: 10px;}
 .sumIcon2 img{width: 40px;height: auto;}
 
-.sumIcon3{position: absolute; top: 720px; left: 30px;}
+.sumIcon3{ float:left; margin-right: 10px;}
 .sumIcon3 img{width: 30px;height: auto;}
 /* Style for different icons end */
 
@@ -53,7 +68,7 @@ display: none;
 .recentAmts{font-size: 10px; list-style-type: none; padding-left: 20px;}
 
 /*Spacing between each recent bill*/
-.nameLi1{margin-top: 50px;}
+.nameLi1{margin-top: 10px;}
 .nameLi2{margin-top: 50px;}
 .nameLi3{margin-top: 50px;}
 
@@ -64,14 +79,27 @@ display: none;
 
 /*------------------------ Profile information styling -----------------------*/
 
+.userInfo{
+    position: absolute;
+    left: 85px;
+    top: 90px;
+}
+
 /*the div of the user image*/
-.profileimg{position:absolute; top: 125px; left: 50px;}
+.profileimg{
+    float: left;
+}
 
 /* the blue profile image */
-.profileimg img{width: 50px; height: auto;}
+.profileimg img{
+    width: 50px; 
+    height: auto;
+}
 
 /* the text beside the blue guy*/
-.profileinfo{	color: #3F6BA9;	position: absolute;	top: 123px;	left: 115px;}
+.profileinfo{	
+    float: left;	
+}
 
 /*------------------------Profile information end ----------------------------*/
 
@@ -79,7 +107,7 @@ display: none;
 /*----------------------------Search Bar--------------------------------- */
 #searchBar {
 	position: absolute;
-	top: 250px;
+	top: 160px;
 	left: 50px;
     width: 200px;
     box-sizing: border-box;
@@ -103,15 +131,28 @@ display: none;
 	background-color: #e7e7e7; 
     border: none;
     color: black;
+    width: 95%;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 5px;
     cursor: pointer;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
 }
-.abtusbtn:hover {background-color: Gainsboro;}
+.abtusbtn:hover {
+    background-color: Gainsboro;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+
+#abtmodalmsg{
+    padding-left:20px;
+}
 
 /*Little X in the top right of the about us popup*/
 .aclose {color: #aaa; float: right; font-size: 28px; font-weight: bold;}
@@ -120,7 +161,7 @@ display: none;
 .aclose:hover,.aclose:focus {color: black; text-decoration: none; cursor: pointer;}
 
 /* THe three vertical dot hover menu*/
-.threedotmenu{position: absolute; top: 10px;left: 20px; border: none;}
+.threedotmenu{position: absolute; top: 0px;left: 10px; border: none;}
 .threedotmenu:hover .dotmenu-content{display: block;}
 
 /*What is inside the dot menu*/
@@ -138,7 +179,7 @@ display: none;
     border: none;  
 	color: white;
 }
-.dotmenu{border: none; background-color: #4478C3 ;}
+.dotmenu{border: none; background-color: #002171 ;}
 .dotmenu:hover{cursor: pointer;}
 /*---------------------------- Three dot menu ends --------------------------- */
 
@@ -154,10 +195,15 @@ display: none;
     display: block;
 	border: none;
 	background: white;
-	font-size: 15px;
+    font-size: 15px;
+    
+    -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
 }
 
-.sidebtns:focus{background: #4478C3;}
 .sidebtns:hover{
     cursor: pointer;
     background:  #4478C3;
@@ -166,7 +212,7 @@ display: none;
 .billtitles {
     color: white;
     float: left;
-    margin-left: 21px;
+    margin-left: 10px;
     text-align: center;
     /* not highlightable */
     -moz-user-select: -moz-none;
@@ -180,14 +226,14 @@ display: none;
 /* positioning of the button*/
 .CreateBill { 
     position: absolute;
-	top: 18px;
+	top: 10px;
 	right: 75px;
     display: inline-block;
 }
 
 /* the button itself*/
 .createbillbtn {
-    background-color: #4478C3;
+    background-color: #002171;
     color: white;
     padding: 8px;
     font-size: 16px;
@@ -205,7 +251,7 @@ display: none;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-.CreateBill:hover .createbillbtn {background-color: #3F6BA9;}
+.CreateBill:hover .createbillbtn {background-color: #002171;}
 
 /* the text in the button*/
 .CreateBill-content a { 
@@ -223,21 +269,21 @@ display: none;
 /*-------------------------------------- Split buttons styles ----------------------------*/
 
 /* what each of the split buttons look like */
-.menubtns{
-    background-color: #e7e7e7;
+.splitbtns{
+	background-color: #e7e7e7; 
     border: none;
     color: black;
-    padding: 15px 00px;
+    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 1px 2px;
+    margin: 4px 2px;
     cursor: pointer;
-    width: 100%;
-    height: auto;
+    width: 97%;
+	
 }
-.menubtns:hover {background-color: Gainsboro}
+.splitbtns:hover {background-color: Gainsboro}
 /*-------------------------------------- Split buttons end ----------------------------*/
 
 
@@ -245,35 +291,47 @@ display: none;
 /* the popups size and location on the screen*/
 .modal {
     display: none; /* Hidden by default */
-    position: absolute; /* Stay in place */
-    top: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
     left: 0;
-    right: 0;
-    bottom: 0;
+    top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    transition: transform, .5s, cubic-bezier(0,0,0.2,1);
-    z-index: 1; /* Sit on top */
 }
 
 /* Whats contained in the popup*/
 .modal-content {
     background-color: #fefefe;
-    margin: 5% auto; /* 15% from the top and centered */
+    margin: 15% auto; /* 15% from the top and centered */
     border: 1px solid #888;
     width: 50%; /* Could be more or less, depending on screen size */
-    max-width: 100%;
-	height: auto%;
-    max-height: 100%;
-    border-radius: 8px;
+	height: auto;
 }
 
 /*The little X thats in corner of the quicksplit popup*/
-.close {color: #aaa;float: right;font-size: 28px;font-weight: bold; margin-right: 10px;}
-.close:hover, .qclose:focus {color: black; text-decoration: none; cursor: pointer;}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold; 
+    margin-right: 10px;
+
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+.close:hover, .qclose:focus {
+    color: black; 
+    text-decoration: none; 
+    cursor: pointer;
+
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
 
 /*-------------------------------------- bill split pop up ends ----------------------------*/
 
@@ -282,24 +340,26 @@ display: none;
 .billspositioning {
 	color: white;
 	position: absolute;
-	top: 1.25%;
+	top: 4px;
 	left: 300px;
 }
 
 /* The banner at the bottom of the screen */
 .footer{
-    background-color: #4478C3;
+    background-color: #002171;
 	position: absolute;
-	padding: 20px;
-	top: 850px;
-	width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
 }
 
 /* The left side of the system */
 .leftcolumn{
 	float: left;
 	width: 250px;
-	height: 825px;
+	height: calc(100% - 20px);
 	padding: 15px;
 	border-right: 1px solid black;
 }
@@ -318,13 +378,14 @@ display: none;
     left: 50%;
     margin-top: -225px;
     margin-left: -250px;
+    
 }
 
 #quicksplit-header{
     background-color: #002171;
     float: left;
     width: 100%;
-    height: auto;
+    height: 100px;
 }
 
 #quicksplit-curtain, #quicksplit-background{
@@ -345,7 +406,7 @@ display: none;
     z-index: 2;
     display: none;
     overflow: hidden;
-    background: #3180f9;
+    background: #0d47a1;
 }
 #quicksplit-inputs-container{
     float: left;
@@ -368,11 +429,11 @@ display: none;
     -webkit-user-select: none;
 }
 
-#quicksplit-total-message{
+#quicksplit-total-message, #quicksplit-split-message{
     padding: 10px 10px 10px 10px;
-    height: 258px;
+    height: auto;
     color: white;
-    font-size: 60px;
+    font-size: 50px;
     text-align: center;
     text-shadow: 2px 2px grey;
 }
@@ -380,10 +441,9 @@ display: none;
 #quicksplit-title{
     color: white;
     float: left;
-    position: absolute;
-    top: 10px;
-    left: 20px;
-
+    margin-left: 25px;
+    margin-top: -6px;
+    font-size: 23px;
     /* not highlightable */
     -moz-user-select: -moz-none;
     -khtml-user-select: none;
@@ -400,10 +460,11 @@ display: none;
 }
 
 #quicksplit-back-button{
-    float: right;
-    width: 200px;
-    margin: 0px 14px 5px 5px;   
+    width: 200px; 
     padding: 10px;
+    position: absolute;
+    bottom: 32px;
+    right: 10px;
 }
 
 #quicksplit-input-container{
@@ -415,68 +476,48 @@ display: none;
 /*------------------------------- advanced split pop up starts ---------------------------*/
 #advSplit_modal-content {
 	height: auto;
-    width: 800px;
-}
-.billheaders{
-    background-color: #002171;
-    float: left;
-    width: 100%;
-    height: auto;
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
+    width: 30%;
 }
 #advSplit_Form {
-    padding: 20px;
+    padding: 10px;
     margin-top:80px;
-    font-size: 14pt;
-    height:auto;
-}
-#advSplit_Form input {
-    border-radius: 4px
 }
 
-/*BillInfo*/
+.billheaders{
+    background-color: #002171;
+    display: block;
+    float: left;
+    width: 100%;
+    height: 80px;
+}
 
 #advSplit_BillInfo {
     display: block;
     height: auto;
     margin: 10px 25px;
-    padding: 0px 0px;
 }
 #advSplit_BillInfo img {
-    cursor: pointer;
-    width: 85px;
-    height: 85px;
-    padding: unset;
-    margin: unset;
-    border: 1px solid #000000;
+    width: 20px;
+    height: 20px;
+    padding: none;
+    margin: none;
     background: none;
-    border: 1px solid #f1f1f1;
-    border-radius: 4px;
-
 }
 #advSplit_BillInfo .dropdownBtn {
-    width: 85px;
-    height: 85px;
+    width: 55px;
+    height: 55px;
     background: #ffffff;
-    padding: 2px 0px;
-    margin: 0px 10px;
 }
-#advSplit_BillInfo .dropbtn {
-    background-color: unset;
-    color: white;
-    padding: 2px;
-    font-size: 16px;
-}
-#advSplit_BillInfo .dropbtn:hover {
-    border-radius: 10%;
-    background-color: #ffde8e;
-    filter: invert(100%);
+#advSplit_BillInfo .splitbtns {
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    margin: 0px;
+    background: none;
 }
 #advSplit_BillInfo .dropdown-content {
-    width: 283px;
     min-width: auto;
-    padding: unset;
+    padding: none;
 }
 #advSplit_BillInfo .leftinline-block {
     display: inline-block;
@@ -485,198 +526,106 @@ display: none;
 }
 #advSplit_BillInfo .rightinline-block {
     display: inline-block;
-    width: 70%;
-    padding-right: 60pt;
-    height: 100%;
-    vertical-align: top;
-    padding: 0px 0px;
+    width: 86%;
+    font-size: 14pt;
 }
 #advSplit_BillName {
-    font-size: 27pt;
-    width: 118%;
-    margin: 4px 0px;
+    font-size: 16pt;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 5px;
 }
-#advSplit_BillDates {
-    margin: 4px 0px;
-}
-.rightinline-block select {
-    font-size: 12pt;
-    text-align: center;
-    margin: 0px 3px;
-}
-
-/*BillTotal*/
 
 #advSplit_BillTotal {
     height: auto;
-    vertical-align: middle;
     margin: 10px 25px;
-    padding: 5px 0px;
+    margin-left: 35px;
 }
 #advSplit_BillTotal .leftinline-block {
     vertical-align: middle;
     text-align: left;
     display: inline-block;
-    width: 65%;
+    width: 67%;
 }
-#advSplit_BillTotal .dropbtn {
-    width: 70px;
-    height: 70px;
-    margin: 5px;
-    font-size: 18pt;
-}
-#advSplit_BillTotal .dropbtn:hover {
-    border-radius: 10%;
-    background-color: #002171;
-}
-#advSplit_BillTotal .leftinline-block .dropdownBtn {
+#advSplit_BillTotal .dropdownBtn {
     width: 55px;
-    height: 65px;
-    font-size: 40pt;
-    background-color: white;
-    border: 1px solid #f1f1f1;
-    border-radius: 4px;
+    height: 55px;
+    background: #ffffff;
 }
-#advSplit_BillTotal .leftinline-block .dropdown-content {
+#advSplit_BillTotal .splitbtns {
+    width: auto;
+    height: auto;
+    background: none;
+}
+#advSplit_BillTotal .dropdown-content {
     min-width: auto;
-    width: 165px;
-    padding: 5px;
-    top: -20px;
-    left: -15px;
+    padding: none;
 }
-
-
 #advSplit_BillTotal .rightinline-block {
     vertical-align: middle;
     text-align: left;
     display: inline-block;
     width: auto;
 }
-#advSplit_BillTotal .rightinline-block .dropdownBtn {
-    width: 80px;
-    height: 35px;
-    background: #ffffff;
-    font-size: 11pt;
-    border: 1px solid #f1f1f1;
-    border-radius: 4px;
-    margin: 5px;
-}
-#advSplit_BillTotal .rightinline-block .dropdown-content {
-    min-width: auto;
-    width: 85px;
-    height: 40px;
-    padding: 0px;
-    top: 0px;
-    left: 0px;
-}
-#advSplit_BillTotal .rightinline-block .dropbtn {
-    width: 85px;
-    height: 40px;
-    padding: 0px 0px;
-    margin: 0px 0px;
-    border: 1px solid #f1f1f1;
-    border-radius: 4px;
-    font-size: 13pt;
+#advSplit_BillTotal button {
+    width: 70px;
 }
 #advSplit_BillTotal input {
-    width: 240px;
-    font-size: 28pt;
-    margin: 0px 2px;
+    width: 200px;
+    font-size: 14pt;
 }
 #advSplit_BillTotal input[class="inputNumber-small"] {
-    width: 120px;
-    font-size: 14pt;
+    width: 70px;
+    font-size: 12pt;
 }
-
-
-/*BillItems*/
 
 #advSplit_BillItems {
-    font-size: 14pt;
+    font-size: 12pt;
     margin: 10px 25px;
+    padding: 0px 10px;
 }
 #advSplit_BillItems button {
-    text-align: center;
-    display: inline-block;
-    width: 110px;
-    height: 35px;
-    padding: 5px;
-    margin-left: 27px;
-    color: white;
-    background-color: #002171d1;
-    border: 1px solid #f1f1f1;
-    border-radius: 4px;
-    font-size: 14pt;
-}
-#advSplit_BillItems #advSplit_BillItemList {
-    font-size: 14pt;
-    padding: 5px;
+    margin: 5px 0px;
 }
 #advSplit_BillItems input {
-    font-size: 14pt;
-    margin: 2px;
-    margin-left: 18px;
-    padding: 5px;
-    width: 300px;
-    border-radius: 4px;
+    font-size: 12pt;
 }
 #advSplit_BillItems .advSplit_BillItemList {
-    margin: 15px;
+    margin-top: 10px;
 }
 #advSplit_BillItems .advSplit_ItemRow {
+    padding: 0px 20px;
     font-size: 14pt;
-    margin: 5px;
 }
-.advSplit_ItemName input {
-    width: 290px;
+#advSplit_BillItems .advSplit_ItemName input {
+    width: 250px;
 }
 #advSplit_BillItems .advSplit_ItemMoney {
-    width: 50%;
-    display: inline-block;
-    text-align: right;
+    width: 100px;
+    margin-left: 50px;
 }
 #advSplit_BillItems .advSplit_ItemMoney input {
-    width: 120px;
+    width: 110px;
 }
 
 
 #advSplit_BillGroups {
-    font-size: 14pt;
+    font-size: 12pt;
     margin: 10px 25px;
-}
-#advSplit_BillGroups .advSplit_UserList {
-    font-size: 14pt;
-    padding: 5px;
+    padding: 0px 10px;
 }
 #advSplit_BillGroups .leftinline-block select { 
+    margin: 5px 0px;
     display: inline-block;
     font-size: 14pt;
-    width: 160px;
-    height: 40px;
-    text-align: center;
-    padding: 5px;
-    margin: 5px;
-    color: white;
-    background-color: #002171d1;
-    border: 1px solid #f1f1f1;
-    border-radius: 4px;
-    font-size: 12pt;
 }
 #advSplit_BillGroups .rightinline-block select { 
     display: inline-block;
     margin-left: 100px;
 }
 #advSplit_BillGroups .advSplit_UserRow {
+    padding: 0px 20px;
     font-size: 14pt;
-    margin: 5px;
-}
-#advSplit_BillGroups .advSplit_UserName {
-    font-size: 14pt;
-    margin: 2px;
-    margin-left: 22px;
-    padding: 5px;
-    width: 300px;
-    border-radius: 4px;
 }
 #advSplit_BillGroups .advSplit_SplitType{
     text-align: right;
@@ -684,87 +633,46 @@ display: none;
 #advSplit_billGroups .advSplit_BillUserList {
     margin-top: 10px;
 }
+.advSplit_UserRow {
+    padding: 0px 20px;
+}
 .advSplit_UserRow input {
     font-size: 12pt;
     width: 200px;
 }
 .advSplit_UserMoney {
-    width: 48%;
-    display: inline-block;
-    text-align: right;
+    width: 100px;
+    margin-left: 50px;
 }
 .advSplit_UserMoney input {
-    font-size: 14pt;
-    margin: 2px;
-    margin-left: 15px;
-    padding: 5px;
-    width: 120px;
+    width: 110px;
 }
 #advSplit_AddUser {
     margin: 10px 0px;
-    text-align: center;
-    display: inline-block;
-    width: 110px;
-    height: 35px;
-    padding: 5px;
-    margin-left: 27px;
-    color: white;
-    background-color: #002171d1;
-    border: 1px solid #f1f1f1;
-    border-radius: 4px;
-    font-size: 11pt;
-}
-#advSplit_SplitType {
-    width: 25%;
-    margin-left: 318px;
-    padding: 5px;
-    font-size: 12pt;
-    text-align: center;
 }
 
 
 #advSplit_Finalize {
     font-size: 12pt;
     margin: 10px 25px;
+    padding: 0px 10px;
 }
 #advSplit_Finalize .leftinline-block {
     display: inline-block;
     text-align: left;
 }
 #advSplit_Finalize .leftinline-block select {
-    display: inline-block;
     font-size: 14pt;
-    width: 160px;
-    height: 40px;
-    text-align: center;
-    padding: 5px;
-    margin: 5px;
-    color: white;
-    background-color: #002171d1;
-    border: 1px solid #f1f1f1;
-    border-radius: 4px;
-    font-size: 12pt;
 }
 
 #advSplit_Finalize .rightinline-block {
     display: inline-block;
     text-align: right;
-    width: 75%;
+    width: 80%;
 }
 
 #advSplit_Finalize .rightinline-block button {
-    display: inline-block;
     font-size: 14pt;
-    width: 160px;
-    height: 40px;
-    text-align: center;
-    padding: 5px;
-    margin: 5px;
-    color: white;
-    background-color: #002171d1;
-    border: 1px solid #f1f1f1;
-    border-radius: 4px;
-    font-size: 12pt;
 }
 /*------------------------------- advanced split pop up ends ---------------------------*/
 
@@ -780,11 +688,14 @@ display: none;
     border: none;
     box-shadow: 1px 1px 1px grey;
     text-align: right;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
 }
 
 .money {
     font-size: 16pt;
-    margin: 0px 2px;
+    margin: 0px 6px;
 }
 
 button:hover{
@@ -792,8 +703,7 @@ button:hover{
 }
 
 label {
-    font-size: 34pt;
-    margin: 0px 5px;
+    font-size: 16pt;
 }
 
 .inputNumber-small {
@@ -803,9 +713,8 @@ label {
 
 /* Dropdown Button */
 .dropbtn {
-    box-align: center;
-    background-color: unset;
-    color: black;
+    background-color: #4CAF50;
+    color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
@@ -814,20 +723,15 @@ label {
 .dropdown {
     position: relative;
     display: inline-block;
-    border-radius: 4px;
 }
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
     position: absolute;
-    opacity: 0;
-    top: 0px;
-    left: 8px;
     background-color: #f1f1f1;
-    min-width: 120px;
+    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    border-radius: 4px;
 }
 /* Links inside the dropdown */
 .dropdown-content a {
@@ -837,25 +741,240 @@ label {
     display: block;
 }
 /* Change color of dropdown links on hover */
-.dropdown-content:hover {
-}
+.dropdown-content a:hover {background-color: #ddd;}
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    opacity: 1;
+.dropdown:hover .dropdown-content {display: block;}
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+/*------------------------------- Code split  ---------------------------*/
+
+#codesplit-content{
+    width: 500px; /* Could be more or less, depending on screen size */
+	height: 450px;
+    background-color: #0d47a1;
+    overflow: hidden;
+    box-shadow: 5px 5px 5px grey;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -225px;
+    margin-left: -250px;
+}
+
+#codesplit-header{
+    background-color: #002171;
+    float: left;
+    width: 100%;
+    height: 100px;
+}
+
+#codesplit-curtain, #codesplit-background{
+    margin-top: 100px;
+    width: 500px;
+    height: 350px;
+}
+
+#codesplit-background{
+    position: fixed;
+    z-index: 1;
+    display: block;
+    
+}
+
+#codesplit-curtain{
+    position: fixed;
+    z-index: 2;
+    display: none;
+    overflow: hidden;
+    background: #3180f9;
+}
+#codesplit-inputs-container{
+    float: left;
+}
+.codesplit-input-container{
+    position: relative;
     display: block;
 }
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
+
+.codesplit-input-name{
+    color: white; 
+    margin: 10px 10px 0px 10px;
+    font-size:18px;
+    font-weight:normal;
+    padding-bottom: 5px;
+
+
 }
-.dropbtn:hover {
-    background-color: #002171;
+
+#codesplit-total-message{
+    padding: 10px 10px 10px 10px;
+    height: 258px;
     color: white;
-    font-size:24pt;
-    border-radius: 10%;
+    font-size: 20px;
+    text-shadow: 2px 2px grey;
+	text-align: center;
+}
+#codesplit-info{
+	position: absolute;
+	top: 40px;
+    padding: 10px 10px 10px 10px;
+    color: white;
+    font-size: 20px;
+    text-shadow: 2px 2px grey;
+}
 
+#codesplit-title{
+	padding-left: 40px;
+    color: white;
+	text-align: center;
+	
+}
+
+#codesplit-paynow{
+	display: none;
+	background: #3180f9;
+}
+
+.fancybutton{
+
+  border-radius: 4px;
+  background-color: #002171;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.fancybutton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.fancybutton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.fancybutton:hover span {
+  padding-right: 25px;
+}
+
+.fancybutton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.fancybackbutton{
+  position: absolute;
+  top:250px;
+  left:25px;
+  border-radius: 4px;
+  background-color: #002171;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.fancybackbutton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.fancybackbutton span:after {
+  content: '\00ab';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.5s;
+}
+
+.fancybackbutton:hover span {
+  padding-left: 25px;
+}
+
+.fancybackbutton:hover span:after {
+  opacity: 1;
+  left: 0;
+}
+#codesplit-back-button{
+    float: left;
+    width: 200px;
+    margin: 0px 14px 5px 5px;   
+    padding: 10px;
+}
+
+#codesplit-input-container{
+    margin-top: 80px;
+    position: absolute; 
+}
+
+.inputCode{
+	position: absolute;
+    font-size: 30px;
+    padding: 20px 20px 20px 10px;
+	top: 50px;
+    left: 90px;
+    width: 300px;
+    border: none;
+    box-shadow: 1px 1px 1px grey;
+    text-align: center;
+}
+
+.tipstyle{
+	position: absolute;
+	top: 10px;
+	left: 120px;
+	color: white;
+	width: 500px;
 }
 
 
+button:hover{
+    cursor: pointer;
+}
+
+/*-------scrollbar------------*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
 
 
 

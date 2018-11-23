@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="./css/Styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<!-- =============================== Whats in the blue at the top ================================= -->
+<header> Bill Splitter </header>
+
+<!-- 3 dot hover menu -->
+<div class = "threedotmenu">
+	<button id = "dotID" class = "dotmenu"></button>
+	<div class ="dotmenu-content">
+		<button id = "abtusID" class= "abtusbtn"> About us! </button>
+	</div>
+</div>
+
+<!-- Changing top of screen text !-->
+<p id = "toptext" class = "billspositioning"></p>
+
+<!-- Create bill button -->
+<div class="CreateBill">
+  <button class="createbillbtn">Create Bill +</button>
+  <div class="CreateBill-content">
+    <button id="quickID" class ="splitbtns">QuickBill</button>
+    <button id="advancedID" class ="splitbtns">Advanced Bill</button>
+    <button id="codeID" class ="splitbtns">Code Bill</button>
+  </div>
+</div>
+<!-- =============================== End of whats in the blue at the top ================================= -->
+
+<div class = "wrapper">
+<!-- =============================== Left Side Column ================================= -->
+	<div class = "sidebar">
+	<!-- User Image and Number And Name -->
+	<div class = "userInfo">
+		<div class = "profileimg" >
+			<img src = "https://i.imgur.com/RS3Sxgl.png">
+		</div>
+		<div  class = "profileinfo">
+			<h2 style = "margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;">USER</h2>
+			<p style = "margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;">#1273</p>
+		</div>
+	</div>
+	<!-- Search Bar -->
+	<input type="text" id="searchBar" name = "search" placeholder="Search..">
+
+	<!-- Three side buttons -->
+	<div class ="leftcolumn">
+		<button id = "bsidebtn" class = "sidebtns" style="top:220px;left:10px;">Bills </button>
+		<button id = "gsidebtn" class = "sidebtns" style="top:270px;left:10px;">Groups</button>
+		<button id = "usidebtn" class = "sidebtns" style="top:320px;left:10px;">Users </button>
+	</div>
+
+	<!-- Recent Bills Data & Bill Symbols in order-->
+	<div class = "nameBills">
+		<h3>Recent Bills:</h3>
+		<ul  class = "recentNames">
+			<li id ="name1ID" class ="nameLi1">McDonalds
+				<div id = "sum1ID" class = "sumIcon1">
+					<img src = "https://cdn.onlinewebfonts.com/svg/img_558810.png">
+				</div>
+				<ul class = "recentAmts">
+				<li id = "amt1ID" > You Paid: $13.77</li>
+				</ul>
+			</li>
+
+			
+			<li id ="name2ID" class = "nameLi2">SportCheck
+				<div id = "sum2ID" class = "sumIcon2">
+					<img src = "http://www.clker.com/cliparts/C/X/D/T/u/B/black-t-shirt-icon-md.png">
+				</div>
+					
+				<ul class = "recentAmts">
+					<li id = "amt2ID" > You Paid: $55.84</li>
+				</ul>
+			</li>
+			
+			<li id ="name3ID" class ="nameLi3">MTS
+				<div id = "sum3ID" class = "sumIcon3">
+					<img src = "http://cliparting.com/wp-content/uploads/2016/08/Cell-phone-icon-clipart-free-to-use-clip-art-resource.png">
+				</div>
+				<ul class = "recentAmts">
+				<li id = "amt3ID" > You Paid: $256.24</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+		
+</div>
+
+	
+
+<!-- =============================== End of whats in the left side column ================================= -->
+	<!-- =============================== Different Pop ups ================================= -->
+	<!-- About us Popup -->
+	<div id="abtmodalID" class="modal">
+		<!-- popup content -->	
+		<div class="modal-content">
+			<span id="abtclose" class="close">&times;</span>
+			<div id=abtmodalmsg>
+				<h3> About Us! </h3>
+				<p>Created By, Jai, Earl, Tristan, Jon</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Quick split Popup -->
+	<div id="qmodalID" class="modal">
+		<!-- Modal content -->  
+		<!-- popup content -->	
+		<div id = "quicksplit-content">
+			<div id = "quicksplit-header">
+				<span class="close" id = "qclose">&times;</span>
+				<div id = "quicksplit-title">
+					<h1>Quick Split</h1>
+				</div>
+			</div>
+		
+			<div id ="quicksplit-curtain">
+				<div id = "quicksplit-total-message"></div>
+				<div id = "quicksplit-split-message"></div>
+				
+				<button id = "quicksplit-back-button" type = "button">Go back</button>
+			</div>
+		
+			<div id = "quicksplit-background">
+				<div id = "quicksplit-inputs-container">
+					<div class="quicksplit-input-container">
+						<div class = "quicksplit-input-name">Number of People </div>
+							<input id ="quicksplit-input-numberpeople" 
+									class="inputNumber-big" type = "number" name = "numberPeople" min = "1" required>
+					</div>
+
+					<div class="quicksplit-input-container">
+						<div class = "quicksplit-input-name">Bill Total ($): </div>
+						<input id = "quicksplit-input-billtotal"
+									class="inputNumber-big" type = "number"  min = "0" required>
+					</div>
+
+					<div class="quicksplit-input-container">
+						<div class = "quicksplit-input-name">Tip (%): </div>
+						<input id = "quicksplit-input-tip"
+									class="inputNumber-big" type = "number" value = "0" min = "0" required>
+					</div>
+
+					<div class="quicksplit-input-container">
+						<div class = "quicksplit-input-name">Tax (%): </div>
+						<input id = "quicksplit-input-tax"
+									class="inputNumber-big" type = "number" value = "0" min = "0" required>
+					</div>  
+
+				</div>
+			<button type="button" id ="quicksplit-calculate-button">Calculate</button> 
+			</div>
+		</div>
+	</div>
+
+	<!-- Advanced split Modal -->
+	<div id="amodalID" class="modal">
+		<!-- Modal content -->  
+		<div id="advSplit_modal-content" class="modal-content">
+
+			<div class="billheaders">
+				<span id="aclose" class="close">&times;</span>
+				<h3 class="billtitles"> Advanced Split </h3>
+			</div>
+
+			<!-- Bill form -->
+			<div id="advSplit_Form">
+				<div id="advSplit_BillInfo">
+					<span class="leftinline-block">
+						<div id="advSplit_Currency" class="dropdown">
+							<img class="dropdownBtn" src="./icon/bill.png" alt="bill icon">
+							<div id="advSplit_CurrencyContent" class="dropdown-content">
+								<span class="splitbtns"><img src="./icon/bill.png" alt="bill icon"></span>
+								<span class="splitbtns"><img src="./icon/ball.png" alt="ball icon"></span>
+								<span class="splitbtns"><img src="./icon/fly.png" alt="fly icon"></span>
+								<span class="splitbtns"><img src="./icon/food.png" alt="food icon"></span>
+								<span class="splitbtns"><img src="./icon/fix.png" alt="fix icon"></span>
+
+							</div>
+							</span>
+						</div>
+					</span>
+					<span class="rightinline-block">
+						<div>
+							<input type="text" id="advSplit_BillName" placeholder="Enter Bill Name">
+						</div>
+						<div>
+							<input type="date" id="advSplit_BillDate">
+							<select id="advSplit_BillRepeat">
+								<option value="no">Does Not Repeat</option>
+								<option value="daily">Daily</option>
+								<option value="weekly">Weekly</option>
+								<option value="monthly">Monthly</option>
+								<option value="annually">Annually</option>
+								<option value="custom">Custom...</option>
+							</select>
+						</div>
+					</span>
+				</div>
+
+				<div id="advSplit_BillTotal">
+					<span class="leftinline-block">
+					<label>Total:</label>
+						<!-- currency button -->
+						<div id="advSplit_Currency" class="dropdown">
+							<span class="dropdownBtn money">$</button>
+							<div id="advSplit_CurrencyContent" class="dropdown-content">
+								<button id="0" class ="splitbtns">Dollar</button>
+								<button id="1" class ="splitbtns">Euro</button>
+								<button id="2" class ="splitbtns">Pound</button>
+								<button id="3" class ="splitbtns">Rupee</button>
+								<button id="4" class ="splitbtns">Yen</button>
+							</div>
+						</div>
+						<input type="number" placeholder="00.00">
+					</span>
+
+					<span class="rightinline-block">
+						<div>
+						<button type="button">TAX (%)</button>: <input class="inputNumber-small" type="number" placeholder="13">
+						<div>
+						</div>
+						<button type="button">TIP (%)</button>: <input class="inputNumber-small" type="number" placeholder="0">
+						</div>
+					</span>
+				</div>
+
+				<div id="advSplit_BillItems">
+					<button type="button" onclick="newItem()"> + add item</button>
+					<div id="advSplit_BillItemList"></div>
+				</div>
+
+				<div id="advSplit_BillGroups">
+					<span class="leftinline-block">
+						<select id="advSplit_BillGroupList" onchange="processGroupReq(event)">
+							<option value="">Select Group</option>
+							<option value="0">Family</option>
+							<option value="1">Friends</option>
+							<option value="2">Workmates</option>
+						</select>
+					</span>
+
+					<span class="rightinline-block hidden" id="advSplit_GroupConfig">
+						<select id="advSplit_SplitType" onchange="processSplitType(event)">
+							<option value="">Split Type</option>
+							<option value="0">Even</option>
+							<option value="1">Percent</option>
+							<option value="2">Weight</option>
+						</select>
+
+						<div id="advSplit_UserList">
+							<div class="advSplit_UserRow">
+								<span><input type="text" class="advSplit_UserName" id="userName0" value="User (you)" readonly></span>
+								<span class="advSplit_UserMoney"><span class="money">$</span><input type="number" class="advSplit_UserPrice" id="userPrice0" value="00.00" readonly></span>
+							</div>
+							<div class="advSplit_UserRow">
+								<span><input type="text" class="advSplit_UserName" id="userName1" value="Jack" readonly></span>
+								<span class="advSplit_UserMoney"><span class="money">$</span><input type="number" class="advSplit_UserPrice" id="userPrice1" value="00.00" readonly></span>
+							</div>
+							<div class="advSplit_UserRow">
+								<span><input type="text" class="advSplit_UserName" id="userName2" value="Fred" readonly></span>
+								<span class="advSplit_UserMoney"><span class="money">$</span><input type="number" class="advSplit_UserPrice" id="userPrice2" value="00.00" readonly></span>
+							</div>
+						</div>
+						<select id="advSplit_AddUser" onchange="processAddUser(event)">
+							<option value="">Select User</option>
+							<option value="Sam">Sam</option>
+							<option value="Jon">Jon</option>
+							<option value="Van">Van</option>
+						</select>
+					</span>
+
+				</div>
+				<div id="advSplit_Finalize">
+					<span class="leftinline-block">
+						<select id="advSplit_AddUser" onchange="processSettle(event)">
+							<option value="">Settled</option>
+							<option value="Sam">User1</option>
+							<option value="Jon">User2</option>
+							<option value="Van">User3</option>
+						</select>
+					</span>
+					<span class="rightinline-block">
+						<button type="button" id ="quicksplit:wcalculate-button">Done</button> 
+					</span>
+				</div>
+		</div>
+	</div>
+	</div>
+	<!-- Code Split popup -->
+	<div id="cmodalID" class="modal">
+		<!-- popup content -->
+			<div id = "codesplit-content">
+		
+			<div id = "codesplit-header">
+				<span class="close" id = "cclose">&times;</span>
+				<div id = "codesplit-title">
+					<h1 align = "center">Code Split</h1>
+				</div>
+			</div>
+
+			<div id ="codesplit-curtain">
+				<div id = "codesplit-total-message"></div>
+				<div id = "codesplit-info">
+				<ul id = "codeorder">Bill contains:</ul>
+					<ul style = "list-style-type: none; font-size: 20px"> Cheese Burger------- 
+						<li  style = "float: right;"> <span style = "font-size: 10px;;"></span> $10.00 </li>
+					</ul>
+				</ul>
+			
+				</div>
+					<button id = "backbtnID" class = "fancybackbutton"><span>Go back</span></button>
+					<button id = "paybtnID" class = "fancybutton" style = "position: absolute; top: 250px; right: 25px;"><span>Pay Now</span></button> 
+			</div>
+			
+			<div id="codesplit-paynow">
+				<p style = "color: white; position: absolute; top: 200px; left: 185px;">Thanks for paying!</p>
+				<button class = "fancybutton" id ="finishID" style = "position: absolute; top: 300px; left: 145px;"><span>Close</span></button> 
+			</div>
+		
+			<div id = "codesplit-background">
+				<div id = "codesplit-inputs-container">
+					<div class="codesplit-input-container">
+						<input id = "codesplit-inputID" class = "inputCode" type="text" id="searchBar" name = "search" placeholder="Enter Code Here!">
+					</div>  
+					
+				</div>
+			<button class = "fancybutton" id ="findBillID" style = "position: absolute; top: 150px; left: 153px;"><span>Find Bill</span></button> 
+			<div id = "tiptext" class = "tipstyle">
+				<p id="tip"></p>
+			</div>
+			</div>
+
+			</div>
+	</div>
+	<!-- =============================== End of Pop ups ================================= -->
+
+		<!-- ============================================ Hardcoded "Data" ================================================== -->
+		<!-- Bill data-->
+		<div id = "billsID" class = "mainStyle">
+		<ul><h1>October 2018</h1>
+			<ul id = "oct13" class = "date"> 12
+				<ul id = "obill1ID" style = "list-style-type: none; font-size: 30px"> McDonalds
+					<li  style = "float: right; padding-right:10px;"> <span style = "font-size: 10px;">You Paid:</span> $13.77 </li>
+				</ul>
+				<ul id = "obill2ID" style = "list-style-type: none; font-size: 30px; margin-top: 50px;"> SportChek
+					<li  style = "float: right; padding-right:10px;"> <span style = "font-size: 10px;">You Paid:</span> $55.84 </li>
+				</ul>
+				<ul id = "obill3ID" style = "list-style-type: none; font-size: 30px; margin-top: 50px;">MTS
+					<li  style = "float: right; padding-right:10px;"> <span style = "font-size: 10px;">You Paid:</span> $256.24 </li>
+				</ul>
+			</ul>
+		</ul>
+		<ul><h1>September 2018</h1>
+			<ul id = "sept21" class = "date"> 21
+				<ul id = "bill1ID" style = "list-style-type: none; font-size: 30px"> Dairy Queen
+					<li  style = "float: right; padding-right:10px;"> <span style = "font-size: 10px;">You Paid:</span> $7.58 </li>
+				</ul>
+				<ul id = "bill2ID" style = "list-style-type: none; font-size: 30px; margin-top: 50px;"> Tim Horton's
+					<li  style = "float: right; padding-right:10px;"> <span style = "font-size: 10px;">You Paid:</span> $1.89 </li>
+				</ul>
+			</ul>
+			<ul id = "sept14" class = "date" style = "margin-top: 50px;"> 14
+				<ul id = "bill3ID" style = "list-style-type: none; font-size: 30px; "> Safeway
+					<li  style = "float: right; padding-right:10px;"> <span style = "font-size: 10px;">You Paid:</span> $113.43 </li>
+				</ul>
+				<ul id = "bill4ID" style = "list-style-type: none; font-size: 30px; margin-top: 50px;"> McDonalds
+					<li  style = "float: right; padding-right:10px;"> <span style = "font-size: 10px;">You Paid:</span> $10.77 </li>
+				</ul>
+			</ul>
+		</ul>
+		<ul><h1>August 2018</h1>
+			<ul id = "aug07" class = "date"> 07
+				<ul id = "bill1ID" style = "list-style-type: none; font-size: 30px"> MTS
+					<li  style = "float: right; padding-right:10px;"> <span style = "font-size: 10px;">You Paid:</span> $256.24 </li>
+				</ul>
+			</ul>
+			<ul id = "aug05" class = "date" style = "margin-top: 50px;"> 05
+				<ul id = "bill2ID" style = "list-style-type: none; font-size: 30px; "> McDonalds
+					<li  style = "float: right; padding-right:10px;"> <span style = "font-size: 10px;">You Paid:</span> $1.86 </li>
+				</ul>
+			</ul>
+			<ul id = "aug04" class = "date" style = "margin-top: 50px;"> 04
+				<ul id = "bill3ID" style = "list-style-type: none; font-size: 30px; "> Urban Outfitters
+					<li  style = "float: right; padding-right:10px;"> <span style = "font-size: 10px;">You Paid:</span> $173.65 </li>
+				</ul>
+			</ul>
+			<ul id = "aug01" class = "date" style = "margin-top: 50px;"> 01
+				<ul id = "bill4ID" style = "list-style-type: none; font-size: 30px; "> UofM Bookstore
+					<li  style = "float: right; padding-right:10px;"> <span style = "font-size: 10px;">You Paid:</span> $500.00</li>
+				</ul>
+			</ul>
+		</ul>
+		</div>
+		<!-- End of bill data -->
+
+		<!-- Create bill drop down stuff ends ----------------------------------->
+		<!-- user Data -->
+		<div id = "usersID" class = "mainStyle">
+		<ul><h1>Users</h1>
+			<ul id = "user1ID" style = "list-style-type: none; font-size: 30px"> User
+				<li  style = "float: right; padding-right:10px;"> <span style = "font-size: 10px;">Number:</span> #1273 </li>
+			</ul>
+		</ul>
+		</div>
+		<!-- end of user data -->
+
+		<!-- group data -->
+		<div id = "groupsID" class = "mainStyle">
+		<ul><h1>Groups</h1>
+			<li id = "group1ID" style = "list-style-type: none; font-size: 30px"> Phone Bill Group
+			<ul>
+				<li> User #1273 </li>
+				<li> User #1193 </li>
+				<li> User #5231 </li>
+			</ul>
+			</li>
+		</ul>
+		</div>
+		<!-- end of group data -->
+		<!-- ============================================ End of Hardcoded "Data" ================================================== -->
+	</div>
+</div>
+
+		
+<!-- =============================== Footer ================================= -->
+<div class = "footer"></div>
+<!-- =============================== End of Footer ================================= -->
+
+<!-- ============================================ Scripts ================================================== -->
+<script src="./javascript/sidechange.js"></script>
+<script src="./javascript/itemlist_adder.js"></script>
+<script src="./javascript/modal_handler.js"></script>
+<script src="./javascript/quicksplit_handler.js"></script>
+<script src="./javascript/advancedsplit_handler.js"></script>
+<script src="./javascript/codesplit_handler.js"></script>
+<!-- ============================================ end of scripts ================================================== -->
+
+</body>
+</html>
