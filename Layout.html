@@ -215,15 +215,15 @@
         <span class="rightinline-block">
           <div>
             <div id="advSplit_Taxation" class="dropdown">
-              <button id="advSplit_Tax" class="dropdownBtn">TAX (%):</button> <input class="inputNumber-small" type="number" placeholder="13">
+              <button id="advSplit_Tax" class="dropdownBtn">TAX (%):</button> <input id="taxValue" class="inputNumber-small" type="number" placeholder="13">
               <div id="advSplit_TaxMethods" class="dropdown-content">
                 <button id="1" class ="dropbtn">TAX ($):</button>
               </div>
             </div>
           </div>
           <div>
-            <div id="advSplit_Taxation" class="dropdown">
-              <button id="advSplit_Tip" class="dropdownBtn">TIP (%):</button> <input class="inputNumber-small" type="number" placeholder="0">
+            <div id="advSplit_Tipation" class="dropdown">
+              <button id="advSplit_Tip" class="dropdownBtn">TIP (%):</button> <input id="tipValue" class="inputNumber-small" type="number" placeholder="0">
               <div id="advSplit_TipMethods" class="dropdown-content">
                 <button id="1" class ="dropbtn">TIP ($):</button>
               </div>
@@ -249,10 +249,9 @@
 
         <span class="rightinline-block hidden" id="advSplit_GroupConfig">
           <select id="advSplit_SplitType" onchange="processSplitType(event)">
-            <option value="">Split Type</option>
-            <option value="Even">Even</option>
-            <option value="Percent">Percent</option>
-            <option value="Weight">Weight</option>
+            <option value="Even">Even Split</option>
+            <option value="Percent">Percentage</option>
+            <option value="Weight">Amount</option>
           </select>
 
           <div id="advSplit_UserList">
@@ -282,13 +281,11 @@
         <span class="leftinline-block">
           <select id="advSplit_AddUser" onchange="processSettle(event)">
             <option value="">Settled</option>
-            <option value="Sam">User1</option>
-            <option value="Jon">User2</option>
-            <option value="Van">User3</option>
+            <option value="">Not Settled</option>
           </select>
         </span>
         <span class="rightinline-block">
-          <button type="button" id ="quicksplit:wcalculate-button">Finalize</button> 
+          <button type="button" id ="advSplit_Sub">Finalize</button> 
         </span>
       </div>
     </div>
