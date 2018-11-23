@@ -1,5 +1,6 @@
 html{
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 header {
 	background-color: #4478C3;
@@ -8,14 +9,24 @@ header {
 	padding: 20px;
 	padding-left: 60px;
 	color: white;
-	position: absolute;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.wrapper{
+    display: flex;
+    height: 100%;
+}
+.sidebar{
+    height: calc(100% - 100px);
 }
 
 /* Style of the blue header*/
 .mainStyle{
-top: 125px;
+top: 70px;
 left: 325px;
-height:700px;
+height: calc(100% - 100px);
 width:75%;
 border:none;
 font:16px/26px;
@@ -31,18 +42,18 @@ display: none;
 /* -------------------------- Recent Bills Styles ---------------------------*/
 .nameBills{
 	position: absolute;
-	top: 450px;
+	top: 380px;
 	left: 0px;
-	padding-left: 50px;
+	padding-left: 20px;
 }
 /* Style for the different icons */
-.sumIcon1{	position: absolute;	top: 550px;	left: 25px;}
+.sumIcon1{ float:left; margin-right: 10px;}
 .sumIcon1 img{width: 40px; height: auto;}
 
-.sumIcon2{	position: absolute;	top: 645px;	left: 25px;}
+.sumIcon2{ float:left; margin-right: 10px;}
 .sumIcon2 img{width: 40px;height: auto;}
 
-.sumIcon3{position: absolute; top: 720px; left: 30px;}
+.sumIcon3{ float:left; margin-right: 10px;}
 .sumIcon3 img{width: 30px;height: auto;}
 /* Style for different icons end */
 
@@ -53,7 +64,7 @@ display: none;
 .recentAmts{font-size: 10px; list-style-type: none; padding-left: 20px;}
 
 /*Spacing between each recent bill*/
-.nameLi1{margin-top: 50px;}
+.nameLi1{margin-top: 10px;}
 .nameLi2{margin-top: 50px;}
 .nameLi3{margin-top: 50px;}
 
@@ -64,14 +75,27 @@ display: none;
 
 /*------------------------ Profile information styling -----------------------*/
 
+.userInfo{
+    position: absolute;
+    left: 85px;
+    top: 90px;
+}
+
 /*the div of the user image*/
-.profileimg{position:absolute; top: 125px; left: 50px;}
+.profileimg{
+    float: left;
+}
 
 /* the blue profile image */
-.profileimg img{width: 50px; height: auto;}
+.profileimg img{
+    width: 50px; 
+    height: auto;
+}
 
 /* the text beside the blue guy*/
-.profileinfo{	color: #3F6BA9;	position: absolute;	top: 123px;	left: 115px;}
+.profileinfo{	
+    float: left;	
+}
 
 /*------------------------Profile information end ----------------------------*/
 
@@ -79,7 +103,7 @@ display: none;
 /*----------------------------Search Bar--------------------------------- */
 #searchBar {
 	position: absolute;
-	top: 250px;
+	top: 160px;
 	left: 50px;
     width: 200px;
     box-sizing: border-box;
@@ -120,7 +144,7 @@ display: none;
 .aclose:hover,.aclose:focus {color: black; text-decoration: none; cursor: pointer;}
 
 /* THe three vertical dot hover menu*/
-.threedotmenu{position: absolute; top: 10px;left: 20px; border: none;}
+.threedotmenu{position: absolute; top: 0px;left: 10px; border: none;}
 .threedotmenu:hover .dotmenu-content{display: block;}
 
 /*What is inside the dot menu*/
@@ -180,7 +204,7 @@ display: none;
 /* positioning of the button*/
 .CreateBill { 
     position: absolute;
-	top: 18px;
+	top: 10px;
 	right: 75px;
     display: inline-block;
 }
@@ -262,7 +286,7 @@ display: none;
     margin: 15% auto; /* 15% from the top and centered */
     border: 1px solid #888;
     width: 50%; /* Could be more or less, depending on screen size */
-	height: auto%;
+	height: auto;
 }
 
 /*The little X thats in corner of the quicksplit popup*/
@@ -276,7 +300,7 @@ display: none;
 .billspositioning {
 	color: white;
 	position: absolute;
-	top: 1.25%;
+	top: 4px;
 	left: 300px;
 }
 
@@ -284,16 +308,18 @@ display: none;
 .footer{
     background-color: #4478C3;
 	position: absolute;
-	padding: 20px;
-	top: 850px;
-	width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
 }
 
 /* The left side of the system */
 .leftcolumn{
 	float: left;
 	width: 250px;
-	height: 825px;
+	height: 100%;
 	padding: 15px;
 	border-right: 1px solid black;
 }
@@ -855,9 +881,6 @@ label {
 #codesplit-input-container{
     margin-top: 80px;
     position: absolute; 
-}
-.wrapper{
-	text-align: center;
 }
 
 .inputCode{
