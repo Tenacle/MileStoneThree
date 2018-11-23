@@ -16,10 +16,10 @@ header {
 
 .wrapper{
     display: flex;
-    height: 100%;
+    height: calc(100vh - 30px);
 }
 .sidebar{
-    height: calc(100% - 100px);
+    height: 100%;
 }
 
 /* Style of the blue header*/
@@ -319,7 +319,7 @@ display: none;
 .leftcolumn{
 	float: left;
 	width: 250px;
-	height: 100%;
+	height: calc(100% - 20px);
 	padding: 15px;
 	border-right: 1px solid black;
 }
@@ -906,6 +906,27 @@ label {
 
 button:hover{
     cursor: pointer;
+}
+
+/*-------scrollbar------------*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
 }
 
 
