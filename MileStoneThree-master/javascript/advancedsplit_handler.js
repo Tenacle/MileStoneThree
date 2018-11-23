@@ -179,6 +179,8 @@ function processAddUser(event) {
     recalculate();
 }
 
+
+
 function recalculate() {
     var userList = document.getElementById("advSplit_UserList");
     var userListLength = userList.getElementsByTagName('div').length;
@@ -186,14 +188,20 @@ function recalculate() {
     var actualSum = 0;
     if (/%/.test(document.getElementById("advSplit_Tax").textContent)) {
         console.log("%%%% by tax");
-        actualSum = parseInt(getTotal) + parseInt(getTotal * document.getElementById("taxValue").value);
+        var qqq = parseInt(document.getElementById("taxValue").value);
+        if (qqq != 0 ) {
+            actualSum = parseInt(getTotal) + parseInt(getTotal * qqq);
+        }
     }else {
         console.log("$$ by tax");
         actualSum = parseInt(getTotal) + parseInt(document.getElementById("taxValue").value);
     }
     if (/%/.test(document.getElementById("advSplit_Tip").textContent)) {
         console.log("%%%% by tip");
-        actualSum = parseInt(getTotal) + parseInt(getTotal * document.getElementById("tipValue").value);
+        var qqq = parseInt(document.getElementById("taxValue").value);
+        if (qqq != 0 ) {
+            actualSum = parseInt(getTotal) + parseInt(getTotal * qqq);
+        }
     }else {
         console.log("$$ by tip");
         actualSum = parseInt(getTotal) + parseInt(document.getElementById("tipValue").value);
