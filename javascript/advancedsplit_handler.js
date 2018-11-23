@@ -138,6 +138,7 @@ function processGroupReq(event) {
 
         userList.appendChild(div);
     }
+    recalculate();
 }
 
 function processAddUser(event) {
@@ -182,7 +183,24 @@ function recalculate() {
     var userList = document.getElementById("advSplit_UserList");
     var userListLength = userList.getElementsByTagName('div').length;
     var getTotal = document.getElementById("totalBill").value;
-    var splitEven = getTotal/userListLength;
+    var actualSum = 0;
+    if (/%/.test(document.getElementById("advSplit_Tax").textContent)) {
+        console.log("%%%% by tax");
+        actualSum = parseInt(getTotal) + parseInt(getTotal * document.getElementById("taxValue").value);
+    }else {
+        console.log("$$ by tax");
+        actualSum = parseInt(getTotal) + parseInt(document.getElementById("taxValue").value);
+    }
+    if (/%/.test(document.getElementById("advSplit_Tip").textContent)) {
+        console.log("%%%% by tip");
+        actualSum = parseInt(getTotal) + parseInt(getTotal * document.getElementById("tipValue").value);
+    }else {
+        console.log("$$ by tip");
+        actualSum = parseInt(getTotal) + parseInt(document.getElementById("tipValue").value);
+    }
+    console.log(actualSum);
+    console.log(userListLength);
+    var splitEven = parseInt(actualSum)/parseInt(userListLength);
     for (var i = 0; i < userListLength; i++) {
         document.getElementById("userPrice"+i).value = splitEven;
     }
@@ -255,8 +273,11 @@ function switcharoo(target) {
 
 
 
+var finalizebtn = document.getElementById("advSplit_Sub");
 
-
+finalizebtn.onclick = function() {
+    window.location.reload(false); 
+}
 
 
 
